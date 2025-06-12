@@ -1,16 +1,28 @@
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { Link } from "react-router";
 
 const SwiperSlider = () => {
   return (
-    <div className="w-full h-[70vh] md:h-[80vh]">
+    <div className="relative w-full h-[70vh] md:h-[80vh]">
+      {/* Custom Navigation Arrows */}
+      <div className="swiper-Link-prev-custom absolute top-1/2 left-4 z-10 transform -translate-y-1/2 text-white bg-black/50 p-3 rounded-full cursor-pointer">
+        <FaChevronLeft className="text-xl" />
+      </div>
+      <div className="swiper-Link-next-custom absolute top-1/2 right-4 z-10 transform -translate-y-1/2 text-white bg-black/50 p-3 rounded-full cursor-pointer">
+        <FaChevronRight className="text-xl" />
+      </div>
+
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
-        navigation
+        navigation={{
+          nextEl: ".swiper-Link-next-custom",
+          prevEl: ".swiper-Link-prev-custom",
+        }}
         pagination={{ clickable: true }}
         autoplay={{ delay: 4000 }}
         loop={true}
@@ -19,21 +31,26 @@ const SwiperSlider = () => {
         {/* Slide 1 */}
         <SwiperSlide>
           <div
-            className="w-full h-full bg-cover bg-center rounded-2xl flex items-center justify-center text-white text-center"
+            className="w-full h-full bg-cover bg-center rounded-2xl text-white"
             style={{
-              backgroundImage: "url(https://i.ibb.co/3yFK0hKP/banner-5-1.webp)",
+              backgroundImage: "url(https://i.ibb.co/B2hf2X4v/slider-re-6.jpg)",
             }}
           >
-            <div className="px-2 md:px-1 lg:px-0">
-              <div className="bg-black bg-opacity-50 p-8 rounded-lg">
-                <h1 className="text-xl md:text-4xl lg:text-6xl font-bold">
-                  Find Your Perfect Roommate – Safe and Easy
+            <div className="flex h-full items-center justify-start p-8 md:p-16">
+              <div className="bg-black bg-opacity-50 p-6 md:p-10 rounded-lg max-w-xl">
+                <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
+                  Book Luxury Hotels, Effortlessly
                 </h1>
-                <p className="mt-4 text-base md:text-lg lg:text-xl">
-                  RoomMatch helps users find compatible roommates by matching
-                  lifestyle, location, and preferences—all on a secure,
-                  all-in-one platform...
+                <p className="mt-4 text-sm md:text-base lg:text-lg">
+                  Discover top-rated hotels and exclusive deals across the globe
+                  — all in one sleek, easy-to-use platform.
                 </p>
+                <Link
+                  to="/roomPage"
+                  className="btn mt-6 bg-white text-black font-semibold py-2 px-4 rounded hover:bg-gray-200 transition"
+                >
+                  Explore Now
+                </Link>
               </div>
             </div>
           </div>
@@ -42,21 +59,26 @@ const SwiperSlider = () => {
         {/* Slide 2 */}
         <SwiperSlide>
           <div
-            className="w-full h-full bg-cover object-fill bg-center rounded-2xl flex items-center justify-center text-white text-center"
+            className="w-full h-full bg-cover bg-center rounded-2xl text-white"
             style={{
-              backgroundImage: "url(https://i.ibb.co/WWywjynj/banner-4-1.jpg)",
+              backgroundImage: "url(https://i.ibb.co/rKV49d7L/slider-re-4.jpg)",
             }}
           >
-            <div className="px-2 md:px-1 lg:px-0">
-              <div className="bg-black bg-opacity-50 p-8 rounded-lg">
-                <h1 className="text-xl md:text-5xl lg:text-6xl font-bold">
-                  Smart Living Starts with the Right Roommate
+            <div className="flex h-full items-center justify-start p-8 md:p-16">
+              <div className="bg-black bg-opacity-50 p-6 md:p-10 rounded-lg max-w-xl">
+                <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
+                  Your Stay, Your Way
                 </h1>
-                <p className="mt-4 text-base md:text-lg lg:text-xl">
-                  ShareSpace helps you find trusted roommates or rooms by
-                  filtering based on budget, habits, and location for a
-                  stress-free living experience...
+                <p className="mt-4 text-sm md:text-base lg:text-lg">
+                  Customize your trip with flexible bookings, real guest
+                  reviews, and instant confirmations.
                 </p>
+                <Link
+                  to="/roomPage"
+                  className=" btn mt-6 bg-white text-black font-semibold py-2 px-4 rounded hover:bg-gray-200 transition"
+                >
+                  Start Booking
+                </Link>
               </div>
             </div>
           </div>
@@ -65,20 +87,26 @@ const SwiperSlider = () => {
         {/* Slide 3 */}
         <SwiperSlide>
           <div
-            className="w-full h-full bg-cover bg-center rounded-2xl flex items-center justify-center text-white text-center"
+            className="w-full h-full bg-cover bg-center rounded-2xl text-white"
             style={{
-              backgroundImage: "url(https://i.ibb.co/3930QYbX/banner2-1.jpg)",
+              backgroundImage: "url(https://i.ibb.co/39YwCVCn/slider-re-5.jpg)",
             }}
           >
-            <div className="px-2 md:px-1 lg:px-0">
-              <div className="bg-black bg-opacity-50 p-8 rounded-lg">
-                <h1 className="text-xl md:text-5xl lg:text-6xl font-bold">
-                  Find a Roommate Who Feels Like a Friend
+            <div className="flex h-full items-center justify-start p-8 md:p-16">
+              <div className="bg-black bg-opacity-50 p-6 md:p-10 rounded-lg max-w-xl">
+                <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
+                  Trusted Hotels. Instant Booking.
                 </h1>
-                <p className="mt-4 text-base md:text-lg lg:text-xl">
-                  LiveBuddy connects like-minded people to find or offer shared
-                  housing quickly and safely through an easy-to-use platform...
+                <p className="mt-4 text-sm md:text-base lg:text-lg">
+                  Whether for business or leisure, book with confidence using
+                  our secure and verified platform.
                 </p>
+                <Link
+                  to="/roomPage"
+                  className="btn mt-6 bg-white text-black font-semibold py-2 px-4 rounded hover:bg-gray-200 transition"
+                >
+                  View Deals
+                </Link>
               </div>
             </div>
           </div>

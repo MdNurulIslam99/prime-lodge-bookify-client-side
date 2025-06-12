@@ -16,7 +16,7 @@ const FaqSection = () => {
           </div>
         </header>
       </div>
-      <div className="py-5 px-10">
+      <div className="py-5 max-w-screen-2xl mx-auto px-10">
         <div>
           <h1 className="text-3xl font-bold text-center py-5">FAQ SECTION</h1>
         </div>

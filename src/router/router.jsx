@@ -6,6 +6,7 @@ import TermsConditions from "../Pages/TermsConditions";
 import PrivacyPolicy from "../Pages/PrivacyPolicy";
 import ContactUs from "../Pages/ContactUs";
 import FaqSection from "../Pages/FaqSection";
+import RoomPage from "../components/RoomPage/RoomPage";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
     element: <MainLayouts></MainLayouts>,
     children: [
       { index: true, element: <Home></Home> },
+      {
+        path: "/roomPage",
+        element: <RoomPage></RoomPage>,
+      },
       {
         path: "/termsCondition",
         element: <TermsConditions></TermsConditions>,
