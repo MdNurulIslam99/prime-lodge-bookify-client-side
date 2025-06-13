@@ -1,6 +1,9 @@
 import React from "react";
 import SwiperSlider from "../SwiperSlider/SwiperSlider";
 import ContactPageMap from "../ContactPageMap/ContactPageMap";
+import TypewriterText from "../TypewriterText/TypewriterText";
+import LottieCard from "../LottieCard/LottieCard";
+import HotelService from "../HotelService/HotelService";
 
 const Home = () => {
   return (
@@ -8,9 +11,17 @@ const Home = () => {
       <div className="mt-10 mb-10">
         <SwiperSlider></SwiperSlider>
       </div>
-
+      <div className="mt-10 mb-10">
+        <TypewriterText></TypewriterText>
+      </div>
       <div className="mt-10 mb-10">
         <ContactPageMap></ContactPageMap>
+      </div>
+      <div className="mt-10 mb-10">
+        <LottieCard></LottieCard>
+      </div>
+      <div className="mt-10 mb-10">
+        <HotelService></HotelService>
       </div>
     </div>
   );

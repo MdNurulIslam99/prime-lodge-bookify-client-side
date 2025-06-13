@@ -1,89 +1,73 @@
 import React, { use } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../contexts/AuthContext/AuthContext";
-
-// import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
 
 const SignIn = () => {
   const { signInUser, signInWithGoogle } = use(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
-  // const googleProvider = new GoogleAuthProvider();
 
   const handleSignIn = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
-    // console.log({ email, password });
+
     signInUser(email, password)
       .then((result) => {
         const user = result.user;
-        // console.log(user);
         navigate(`${location.state ? location.state : "/"}`);
-        // alert(" User login by Google successfully");
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: "User SignIn by successfully",
+          title: "User signed in successfully",
           showConfirmButton: false,
           timer: 1500,
         });
       })
       .catch((error) => {
-        // console.log(error);
-        // alert(" User login by Google Unsuccessfully");
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "User can't SignIn.User name or Password was wrong!",
-          // footer: '<a href="#">Why do I have this issue?</a>',
-        });
+        //  Show toast error
+        toast.error("User can't sign in. Username or password is incorrect!");
       });
   };
 
   const handleGoogleSignin = () => {
-    // console.log("google signIn clicked");
     signInWithGoogle()
       .then((result) => {
         const user = result.user;
-        // console.log(user);
         navigate(`${location.state ? location.state : "/"}`);
-        // alert(" User login by Google successfully");
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: "User login by Google successfully !",
+          title: "User login by Google successfully!",
           showConfirmButton: false,
           timer: 1500,
         });
       })
       .catch((error) => {
-        // console.log(error);
-        alert(" User SignIn by Google Unsuccessfully !");
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "User can't SignIn by Google!",
-          // footer: '<a href="#">Why do I have this issue?</a>',
-        });
+        // Swal.fire({
+        //   icon: "error",
+        //   title: "Oops...",
+        //   text: "User can't SignIn by Google!",
+        // });
+        //  Show toast error
+        toast.error("User can't sign in. Google Account was incorrect!");
       });
   };
+
   return (
     <div>
-      <div className="flex justify-center items-center py-10 px-5 md:px-0 ">
-        {/* <Helmet>
-          <title>SignIn-Form</title>
-        </Helmet> */}
+      <div className="flex justify-center items-center py-10 px-5 md:px-0">
         <div className="w-full max-w-md p-4 rounded-xl shadow-2xl sm:p-8 bg-black text-white">
           <h2 className="mb-6 mt-3 text-3xl font-semibold text-center">
             Login to your account
           </h2>
 
-          <form onSubmit={handleSignIn} action="" className="space-y-8">
+          <form onSubmit={handleSignIn} className="space-y-8">
             <div className="space-y-4">
-              {/* email */}
+              {/* Email */}
               <div className="space-y-2">
                 <label
                   htmlFor="email"
@@ -96,11 +80,11 @@ const SignIn = () => {
                   name="email"
                   id="email"
                   placeholder="leroy@jenkins.com"
-                  className="w-full px-3 py-2 border rounded-md dark:border-gray-300
-                 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                  className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
                   required
                 />
               </div>
+
               {/* Password */}
               <div className="space-y-2">
                 <div className="flex justify-between">
@@ -119,8 +103,7 @@ const SignIn = () => {
                   name="password"
                   id="password"
                   placeholder="*****"
-                  className="w-full px-3 py-2 border rounded-md dark:border-gray-300
-                 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+                  className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
                   required
                 />
               </div>
@@ -150,9 +133,6 @@ const SignIn = () => {
               </button>
             </div>
 
-            {/* {error && (
-              <p className="text-red-500 text-sm font-semibold">{error}</p>
-            )} */}
             <button
               type="submit"
               className="w-full px-8 py-3 text-lg bg-violet-600 font-semibold rounded-md text-gray-50"
@@ -161,7 +141,7 @@ const SignIn = () => {
             </button>
 
             <p className="text-base text-center">
-              Don't have account ?
+              Don't have account?
               <NavLink
                 to="/auth/signup"
                 className="focus:underline hover:underline"
@@ -175,6 +155,9 @@ const SignIn = () => {
           </form>
         </div>
       </div>
+
+      {/* Toast Container for displaying toast messages */}
+      <ToastContainer position="top-right" />
     </div>
   );
 };

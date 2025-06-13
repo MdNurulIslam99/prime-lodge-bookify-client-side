@@ -3,6 +3,9 @@ import { NavLink } from "react-router";
 import { AuthContext } from "../../../contexts/AuthContext/AuthContext";
 
 import userIcon from "/user.png";
+import Swal from "sweetalert2";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const NavBar = () => {
   const links = (
@@ -51,12 +54,13 @@ const NavBar = () => {
       .catch((error) => {
         // An error happened.
         // console.log(error);
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Sign-out Cannot SignOut!",
-          // footer: '<a href="#">Why do I have this issue?</a>',
-        });
+        // Swal.fire({
+        //   icon: "error",
+        //   title: "Oops...",
+        //   text: "Sign-out Cannot SignOut!",
+        //   // footer: '<a href="#">Why do I have this issue?</a>',
+        // });
+        toast.error("User can't Sign Up. Something went wrong!");
         // alert("Sign-out Unsuccessful");
       });
   };
@@ -165,6 +169,8 @@ const NavBar = () => {
           </div>
         )}
       </div>
+      {/* Toast container */}
+      <ToastContainer position="top-right" />
     </div>
   );
 };
