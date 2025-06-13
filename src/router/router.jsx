@@ -7,6 +7,9 @@ import PrivacyPolicy from "../Pages/PrivacyPolicy";
 import ContactUs from "../Pages/ContactUs";
 import FaqSection from "../Pages/FaqSection";
 import RoomPage from "../components/RoomPage/RoomPage";
+import MyBookings from "../components/MyBookings/MyBookings";
+import SignIn from "../components/SignIn/SignIn";
+import SignUp from "../components/SignUp/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/roomPage",
         element: <RoomPage></RoomPage>,
+      },
+      {
+        path: "/myBookings",
+        element: <MyBookings></MyBookings>,
       },
       {
         path: "/termsCondition",
@@ -33,6 +40,14 @@ const router = createBrowserRouter([
       {
         path: "/faqSection",
         element: <FaqSection></FaqSection>,
+      },
+      {
+        path: "/signin",
+        element: <SignIn></SignIn>,
+      },
+      {
+        path: "/signup",
+        element: <SignUp></SignUp>,
       },
     ],
   },

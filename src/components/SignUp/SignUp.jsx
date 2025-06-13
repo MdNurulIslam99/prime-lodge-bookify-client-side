@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router";
-// import { AuthContext } from "../Provider/AuthProvider";
+import React, { use, useState } from "react";
+import { NavLink, useNavigate } from "react-router";
+import { AuthContext } from "../../contexts/AuthContext/AuthContext";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-// import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-// import { auth } from "../../Firebase/firebase.config";
-// import Swal from "sweetalert2";
+
+import Swal from "sweetalert2";
 
 const SignUp = () => {
+  const { createUser, setUser, updatedUser, signInWithGoogle } =
+    use(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
-  /*  const { createUser, setUser, updatedUser } = use(AuthContext);
+  // const googleProvider = new GoogleAuthProvider();
   const navigate = useNavigate();
-  const googleProvider = new GoogleAuthProvider();
   const handleSignUp = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -38,7 +38,7 @@ const SignUp = () => {
       return;
     }
 
-    // console.log({ email, password, userProfile });
+    console.log({ email, password, userProfile });
 
     // create user in the firebase
     createUser(email, password)
@@ -47,17 +47,17 @@ const SignUp = () => {
         // console.log(user);
 
         // save profile info in database
-        fetch("https://roommate-finder-server-psi.vercel.app/users", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(userProfile),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            // console.log("after profile save database", data);
-          });
+        // fetch("https://roommate-finder-server-psi.vercel.app/users", {
+        //   method: "POST",
+        //   headers: {
+        //     "content-type": "application/json",
+        //   },
+        //   body: JSON.stringify(userProfile),
+        // })
+        //   .then((res) => res.json())
+        //   .then((data) => {
+        //     // console.log("after profile save database", data);
+        //   });
 
         updatedUser({
           displayName: name,
@@ -100,7 +100,7 @@ const SignUp = () => {
     // console.log("google signIn clicked");
 
     //  // create user in the firebase with google
-    signInWithPopup(auth, googleProvider)
+    signInWithGoogle()
       .then((result) => {
         // console.log(result);
         Swal.fire({
@@ -123,7 +123,7 @@ const SignUp = () => {
         });
         // alert(" User SignUp by Google Unsuccessfully");
       });
-  }; */
+  };
   return (
     <div className="flex justify-center items-center py-10 px-5 md:px-0">
       {/* <Helmet>
@@ -134,7 +134,7 @@ const SignUp = () => {
           SignUp to your Account
         </h2>
 
-        <form className="space-y-8">
+        <form onSubmit={handleSignUp} className="space-y-8">
           <div className="space-y-4">
             <div className="space-y-2">
               <label htmlFor="name" className="block text-base font-semibold">
@@ -222,7 +222,7 @@ const SignUp = () => {
 
           <div className="my-6 space-y-4">
             <button
-              // onClick={handleGoogleSignUp}
+              onClick={handleGoogleSignUp}
               aria-label="Login with Google"
               type="button"
               className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-violet-600"

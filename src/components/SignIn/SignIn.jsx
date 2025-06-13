@@ -1,7 +1,75 @@
-import React from "react";
-import { NavLink } from "react-router";
+import React, { use } from "react";
+import { NavLink, useLocation, useNavigate } from "react-router";
+import { AuthContext } from "../../contexts/AuthContext/AuthContext";
+
+// import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+
+import Swal from "sweetalert2";
 
 const SignIn = () => {
+  const { signInUser, signInWithGoogle } = use(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  // const googleProvider = new GoogleAuthProvider();
+
+  const handleSignIn = (event) => {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    // console.log({ email, password });
+    signInUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        // console.log(user);
+        navigate(`${location.state ? location.state : "/"}`);
+        // alert(" User login by Google successfully");
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "User SignIn by successfully",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch((error) => {
+        // console.log(error);
+        // alert(" User login by Google Unsuccessfully");
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "User can't SignIn.User name or Password was wrong!",
+          // footer: '<a href="#">Why do I have this issue?</a>',
+        });
+      });
+  };
+
+  const handleGoogleSignin = () => {
+    // console.log("google signIn clicked");
+    signInWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        // console.log(user);
+        navigate(`${location.state ? location.state : "/"}`);
+        // alert(" User login by Google successfully");
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "User login by Google successfully !",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch((error) => {
+        // console.log(error);
+        alert(" User SignIn by Google Unsuccessfully !");
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "User can't SignIn by Google!",
+          // footer: '<a href="#">Why do I have this issue?</a>',
+        });
+      });
+  };
   return (
     <div>
       <div className="flex justify-center items-center py-10 px-5 md:px-0 ">
@@ -13,11 +81,7 @@ const SignIn = () => {
             Login to your account
           </h2>
 
-          <form
-            //  onSubmit={handleSignIn}
-            action=""
-            className="space-y-8"
-          >
+          <form onSubmit={handleSignIn} action="" className="space-y-8">
             <div className="space-y-4">
               {/* email */}
               <div className="space-y-2">
@@ -70,7 +134,7 @@ const SignIn = () => {
 
             <div className="my-6 space-y-4">
               <button
-                // onClick={handleGoogleSignin}
+                onClick={handleGoogleSignin}
                 aria-label="Login with Google"
                 type="button"
                 className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-violet-600"

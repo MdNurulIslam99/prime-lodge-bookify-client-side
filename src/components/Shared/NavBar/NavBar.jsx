@@ -1,12 +1,42 @@
-import React from "react";
+import React, { use } from "react";
 import { NavLink } from "react-router";
-// import { AuthContext } from "../Provider/AuthProvider";
-// import userIcon from "/user.png";
+import { AuthContext } from "../../../contexts/AuthContext/AuthContext";
+
+import userIcon from "/user.png";
 
 const NavBar = () => {
+  const links = (
+    <>
+      <li>
+        <NavLink
+          className={({ isActive }) => (isActive ? "text-indigo-800" : "")}
+          to="/"
+        >
+          Home
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink
+          className={({ isActive }) => (isActive ? "text-indigo-800" : "")}
+          to="/roomPage"
+        >
+          Rooms
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) => (isActive ? "text-indigo-800" : "")}
+          to="/myBookings"
+        >
+          MyBookings
+        </NavLink>
+      </li>
+    </>
+  );
   // const darkMode = true;
-  // const { user, signOutUser } = use(AuthContext);
-  /*   const handleLogOut = () => {
+  const { user, signOutUser } = use(AuthContext);
+  const handleLogOut = () => {
     signOutUser()
       .then(() => {
         // alert("Sign-out successful");
@@ -29,7 +59,7 @@ const NavBar = () => {
         });
         // alert("Sign-out Unsuccessful");
       });
-  }; */
+  };
 
   // Toggle Theme
   // const handleToggle = () => {
@@ -63,26 +93,7 @@ const NavBar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow "
           >
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "text-indigo-500" : ""
-                }
-                to="/"
-              >
-                Home
-              </NavLink>
-            </li>
-
-            <li>
-              <NavLink to="/addToFindRoommate">Add to Find Roommate</NavLink>
-            </li>
-            <li>
-              <NavLink to="/browseListing">Browse Listing</NavLink>
-            </li>
-            <li>
-              <NavLink to="/myListings">My Listings</NavLink>
-            </li>
+            {links}
           </ul>
         </div>
         <NavLink className="btn btn-ghost text-xl">
@@ -101,42 +112,17 @@ const NavBar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 fontMulish text-xl font-bold">
-          <li>
-            <NavLink
-              className={({ isActive }) => (isActive ? "text-indigo-800" : "")}
-              to="/"
-            >
-              Home
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink
-              className={({ isActive }) => (isActive ? "text-indigo-800" : "")}
-              to="/addToFindRoommate"
-            >
-              Add to Find Roommate
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={({ isActive }) => (isActive ? "text-indigo-800" : "")}
-              to="/browseListing"
-            >
-              Browse Listing
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={({ isActive }) => (isActive ? "text-indigo-800" : "")}
-              to="/myListings"
-            >
-              My Listings
-            </NavLink>
-          </li>
+          {links}
         </ul>
       </div>
-      {/* <div className="navbar-end  space-x-5">
+      <div className="navbar-end  space-x-5">
+        {/* <NavLink to="/signIn" className="btn ">
+          Login
+        </NavLink>
+        <NavLink to="/signup" className="btn ">
+          Register
+        </NavLink> */}
+
         {user ? (
           <div className="flex gap-3">
             <div className="relative group">
@@ -155,7 +141,7 @@ const NavBar = () => {
 
             <div>
               <button
-                // onClick={handleLogOut}
+                onClick={handleLogOut}
                 className="btn bg-[#0EA106] rounded-4xl text-white px-3 md:px-5 fontMulish text-base md:text-xl"
               >
                 LogOut
@@ -165,20 +151,20 @@ const NavBar = () => {
         ) : (
           <div className=" flex md:flex-row flex-col py-3 md:py-0 gap-1">
             <NavLink
-              to="/auth/signin"
-              className="btn bg-[#0EA106] rounded-4xl text-white px-5 fontMulish font-bold text-base md:text-xl"
+              to="/signin"
+              className="btn bg-[#0682a1] rounded-4xl text-white px-5  fontMulish font-bold text-base md:text-xl"
             >
-              Login
+              Sign In
             </NavLink>
             <NavLink
-              to="/auth/signup"
-              className="btn bg-[#0EA106] rounded-4xl text-white px-5 fontMulish font-bold text-base md:text-xl"
+              to="/signup"
+              className="btn bg-[#0682a1] rounded-4xl text-white px-5 fontMulish font-bold text-base md:text-xl"
             >
               Sign Up
             </NavLink>
           </div>
         )}
-      </div> */}
+      </div>
     </div>
   );
 };
