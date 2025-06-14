@@ -4,8 +4,12 @@ import ContactPageMap from "../ContactPageMap/ContactPageMap";
 import TypewriterText from "../TypewriterText/TypewriterText";
 import LottieCard from "../LottieCard/LottieCard";
 import HotelService from "../HotelService/HotelService";
+import { useLoaderData } from "react-router";
+import HotelsCollection from "../HotelsCollection/HotelsCollection";
 
 const Home = () => {
+  const hotelsInfo = useLoaderData();
+  console.log(hotelsInfo);
   return (
     <div className="max-w-screen-2xl mx-auto px-16 py-1">
       <div className="mt-10 mb-10">
@@ -16,6 +20,12 @@ const Home = () => {
       </div>
       <div className="mt-10 mb-10">
         <ContactPageMap></ContactPageMap>
+      </div>
+      <div>
+        <HotelsCollection
+          key={hotelsInfo._id}
+          hotelsInfo={hotelsInfo}
+        ></HotelsCollection>
       </div>
       <div className="mt-10 mb-10">
         <LottieCard></LottieCard>
