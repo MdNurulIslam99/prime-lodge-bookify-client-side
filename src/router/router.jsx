@@ -12,6 +12,7 @@ import SignIn from "../components/SignIn/SignIn";
 import SignUp from "../components/SignUp/SignUp";
 import HotelsDetailsCard from "../components/HotelsDetailsCard/HotelsDetailsCard";
 import RoomDetailsPage from "../components/RoomDetailsPage/RoomDetailsPage";
+import PrivateRoute from "../components/routes/PrivateRoute";
 // import HotelCardInfo from "../components/HotelCardInfo/HotelCardInfo";
 
 const router = createBrowserRouter([
@@ -58,7 +59,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/myBookings",
-        element: <MyBookings></MyBookings>,
+        element: (
+          <PrivateRoute>
+            <MyBookings></MyBookings>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/hotelsDetailsCard",
