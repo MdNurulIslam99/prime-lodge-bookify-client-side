@@ -9,8 +9,10 @@ const MainLayouts = () => {
       <div>
         <NavBar></NavBar>
       </div>
-      <div className=" min-h-[calc(100vh-385px)]">
-        <Outlet></Outlet>
+      <div className="max-w-screen-2xl mx-auto px-16 py-1">
+        <div className=" min-h-[calc(100vh-385px)]">
+          <Outlet></Outlet>
+        </div>
       </div>
       <div>
         <Footer></Footer>

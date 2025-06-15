@@ -10,6 +10,8 @@ import RoomPage from "../components/RoomPage/RoomPage";
 import MyBookings from "../components/MyBookings/MyBookings";
 import SignIn from "../components/SignIn/SignIn";
 import SignUp from "../components/SignUp/SignUp";
+import HotelsDetailsCard from "../components/HotelsDetailsCard/HotelsDetailsCard";
+import RoomDetailsPage from "../components/RoomDetailsPage/RoomDetailsPage";
 // import HotelCardInfo from "../components/HotelCardInfo/HotelCardInfo";
 
 const router = createBrowserRouter([
@@ -32,15 +34,27 @@ const router = createBrowserRouter([
       {
         path: "/roomPage",
         element: <RoomPage></RoomPage>,
+        hydrateFallbackElement: (
+          <p>
+            <span className="loading loading-bars loading-md"></span>
+            <span className="loading loading-bars loading-lg"></span>
+            <span className="loading loading-bars loading-xl"></span>
+          </p>
+        ),
+        loader: () => fetch("http://localhost:3000/hotels"),
+      },
+      {
+        path: "/roomDetailsPage",
+        element: <RoomDetailsPage></RoomDetailsPage>,
       },
       {
         path: "/myBookings",
         element: <MyBookings></MyBookings>,
       },
-      // {
-      //   path: "/hotelCardInfo",
-      //   element: <HotelCardInfo></HotelCardInfo>,
-      // },
+      {
+        path: "/hotelsDetailsCard",
+        element: <HotelsDetailsCard></HotelsDetailsCard>,
+      },
       {
         path: "/termsCondition",
         element: <TermsConditions></TermsConditions>,

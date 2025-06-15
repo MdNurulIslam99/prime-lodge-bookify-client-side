@@ -9,7 +9,7 @@ import HotelsCollection from "../HotelsCollection/HotelsCollection";
 
 const Home = () => {
   const hotelsInfo = useLoaderData();
-  console.log(hotelsInfo);
+  // console.log(hotelsInfo);
   return (
     <div className="max-w-screen-2xl mx-auto px-16 py-1">
       <div className="mt-10 mb-10">
