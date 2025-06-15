@@ -1,15 +1,20 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import MyBookingsRow from "../MyBookingsRow/MyBookingsRow";
 
 const MyBookingDetails = ({ myBookingPromise }) => {
-  const myBookings = use(myBookingPromise);
+  const initialData = use(myBookingPromise); // initial data from suspense
+  const [myBookings, setMyBookings] = useState(initialData); // ✅ NEW state
+
+  const handleCancelSuccess = (deletedId) => {
+    setMyBookings((prev) =>
+      prev.filter((booking) => booking._id !== deletedId)
+    ); // ✅ Remove from list
+  };
+
   return (
     <div>
-      {/* <h1>MyBookingDetails: {myBookings.length} </h1> */}
-
       <div className="overflow-x-auto">
         <table className="table">
-          {/* head */}
           <thead>
             <tr>
               <th>No</th>
@@ -28,7 +33,8 @@ const MyBookingDetails = ({ myBookingPromise }) => {
                 index={index}
                 key={myBooking._id}
                 myBooking={myBooking}
-              ></MyBookingsRow>
+                onCancelSuccess={handleCancelSuccess} // ✅ Pass down cancel handler
+              />
             ))}
           </tbody>
         </table>
