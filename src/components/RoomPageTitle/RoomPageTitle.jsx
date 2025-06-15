@@ -15,7 +15,7 @@ const RoomPageTitle = () => {
         features detailed amenities, stunning visuals, and location info to help
         you plan the perfect getaway. Compare prices, amenities, room types, and
         check-in times—all in one place. Start your journey with confidence and
-        book a stay that suits your lifestyle and budget..
+        book a stay that suits your lifestyle and budget.
       </p>
     </div>
   );

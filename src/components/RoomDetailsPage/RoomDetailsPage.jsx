@@ -1,6 +1,7 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
 import { useLoaderData } from "react-router";
+import RoomPageDetailsTitle from "../RoomPageDetailsTitle/RoomPageDetailsTitle";
 
 const RoomDetailsPage = () => {
   const detailsData = useLoaderData();
@@ -25,8 +26,11 @@ const RoomDetailsPage = () => {
   } = detailsData || {};
   return (
     <div>
-      <div className="max-w-6xl mx-auto p-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="max-w-6xl mx-auto  mb-10">
+        <div>
+          <RoomPageDetailsTitle></RoomPageDetailsTitle>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-5 bg-base-200 mt-5  shadow-2xl rounded-2xl">
           <img
             src={hotelRoomImageUrl}
             alt={name}
@@ -87,14 +91,14 @@ const RoomDetailsPage = () => {
               </ul>
             </div>
             <div className="mt-6">
-              <button className="bg-blue-600 text-white px-5 py-2 rounded hover:bg-blue-700 transition">
+              <button className="bg-[#0682a1] font-semibold text-lg text-white px-5 py-2 rounded hover:bg-blue-700 transition">
                 Book Now
               </button>
             </div>
           </div>
         </div>
 
-        <div className="mt-10 text-lg">
+        <div className="mt-10 text-lg bg-gray-200  p-5 shadow-2xl rounded-2xl">
           <h3 className="text-2xl font-bold mb-4">Reviews</h3>
           {Array.isArray(reviews) && reviews.length > 0 ? (
             <div className="space-y-4">
