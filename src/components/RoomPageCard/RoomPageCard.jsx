@@ -17,14 +17,14 @@ const RoomPageCard = ({ allHotelData }) => {
 
   return (
     <div
-      //   onClick={() => navigate(`/room-details/${_id}`)}
-      onClick={() => navigate("/roomDetailsPage")}
-      className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 cursor-pointer"
+      onClick={() => navigate(`/roomDetailsPage/${_id}`)}
+      //   onClick={() => navigate("/roomDetailsPage")}
+      className="bg-white rounded-2xl p-5 shadow-2xl overflow-hidden hover:shadow-lg transition duration-300 cursor-pointer"
     >
       <img
         src={hotelRoomImageUrl}
         alt={name}
-        className="w-full h-48 object-cover"
+        className="w-full h-48 object-cover rounded-xl shadow-2xl"
       />
       <div className="p-4">
         <h3 className="md:text-xl text-xl font-bold">Name : {name}</h3>

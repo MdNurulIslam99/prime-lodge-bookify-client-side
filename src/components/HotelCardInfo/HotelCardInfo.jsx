@@ -24,7 +24,6 @@ const HotelCardInfo = ({ hotelData }) => {
         <img src={imageUrl} alt={name} className="w-full h-48 object-cover" />
         <div className="p-4">
           <h3 className="md:text-xl text-xl font-bold">
-            Name :{" "}
             <span className="md:text-xl text-lg font-extrabold">{name}</span>
           </h3>
 
@@ -34,8 +33,8 @@ const HotelCardInfo = ({ hotelData }) => {
               {city}.
             </p>
             <p className="text-base text-gray-600">
-              <span className="font-bold">Hotel Room Type :</span>{" "}
-              {roomTypes[1]} , {roomTypes[2]}.
+              <span className="font-bold">Room Type :</span> {roomTypes[1]} ,{" "}
+              {roomTypes[2]}.
             </p>
             <p className=" font-semibold text-base text-gray-600">
               <span className="font-bold"> Hotel Room Rent :</span>{" "}
@@ -45,11 +44,11 @@ const HotelCardInfo = ({ hotelData }) => {
             </p>
             <p className="text-sm text-gray-700 mb-4">
               <span className="font-bold"> Description :</span>
-              <span> {description.slice(0, 120)}</span>
+              <span> {description.slice(0, 120)}....</span>
             </p>
           </div>
           <NavLink to="/hotelsDetailsCard">
-            <button className=" mt-4 w-full bg-[#06a160] font-semibold text-white py-2 rounded-lg hover:bg-blue-300 transition">
+            <button className="  w-full bg-[#06a160] font-semibold text-white py-2 rounded-lg hover:bg-blue-300 transition">
               Book Now
             </button>
           </NavLink>

@@ -44,8 +44,17 @@ const router = createBrowserRouter([
         loader: () => fetch("http://localhost:3000/hotels"),
       },
       {
-        path: "/roomDetailsPage",
+        path: "/roomDetailsPage/:id",
         element: <RoomDetailsPage></RoomDetailsPage>,
+        hydrateFallbackElement: (
+          <p>
+            <span className="loading loading-bars loading-md"></span>
+            <span className="loading loading-bars loading-lg"></span>
+            <span className="loading loading-bars loading-xl"></span>
+          </p>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/hotels/roomDetailsPage/${params.id}`),
       },
       {
         path: "/myBookings",
