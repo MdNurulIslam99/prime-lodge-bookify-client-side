@@ -47,7 +47,7 @@ const HotelCardInfo = ({ hotelData }) => {
               <span> {description.slice(0, 120)}....</span>
             </p>
           </div>
-          <NavLink to="/hotelsDetailsCard">
+          <NavLink to={`/roomDetailsPage/${_id}`}>
             <button className="  w-full bg-[#06a160] font-semibold text-white py-2 rounded-lg hover:bg-blue-300 transition">
               Book Now
             </button>

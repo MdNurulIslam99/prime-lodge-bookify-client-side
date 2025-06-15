@@ -12,6 +12,7 @@ const RoomPageCard = ({ allHotelData }) => {
     pricePerNight,
     currency,
     description,
+    roomStatus,
     hotelRoomImageUrl,
   } = allHotelData || {};
 
@@ -43,6 +44,10 @@ const RoomPageCard = ({ allHotelData }) => {
             <span className="text-indigo-500 font-bold">
               {pricePerNight} {currency} / night
             </span>
+          </p>
+          <p>
+            <span className="font-semibold">Room Status : </span>
+            {roomStatus}
           </p>
           <p>
             <span className="font-semibold">Description : </span>
