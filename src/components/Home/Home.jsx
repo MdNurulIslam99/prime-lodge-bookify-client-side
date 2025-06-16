@@ -6,6 +6,8 @@ import LottieCard from "../LottieCard/LottieCard";
 import HotelService from "../HotelService/HotelService";
 import { useLoaderData } from "react-router";
 import HotelsCollection from "../HotelsCollection/HotelsCollection";
+import PigeonMapsDetails from "../PigeonMapsDetails/PigeonMapsDetails";
+import ReviewShow from "../ReviewShow/ReviewShow";
 
 const Home = () => {
   const hotelsInfo = useLoaderData();
@@ -21,11 +23,17 @@ const Home = () => {
       <div className="mt-10 mb-10">
         <ContactPageMap></ContactPageMap>
       </div>
+      <div className="mt-10 mb-10">
+        <PigeonMapsDetails></PigeonMapsDetails>
+      </div>
       <div>
         <HotelsCollection
           key={hotelsInfo._id}
           hotelsInfo={hotelsInfo}
         ></HotelsCollection>
+      </div>
+      <div className="mt-10 mb-10">
+        <ReviewShow></ReviewShow>
       </div>
       <div className="mt-10 mb-10">
         <LottieCard></LottieCard>
