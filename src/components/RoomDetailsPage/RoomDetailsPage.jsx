@@ -1,6 +1,6 @@
 import React, { use, useState } from "react";
 import { FaStar } from "react-icons/fa";
-import { NavLink, useLoaderData } from "react-router";
+import { NavLink, useLoaderData, useNavigate } from "react-router";
 import RoomPageDetailsTitle from "../RoomPageDetailsTitle/RoomPageDetailsTitle";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -13,7 +13,7 @@ import { toast, ToastContainer } from "react-toastify";
 const RoomDetailsPage = () => {
   const detailsData = useLoaderData();
   const { user } = use(AuthContext);
-
+  const navigate = useNavigate();
   const {
     _id,
     name,
@@ -162,9 +162,15 @@ const RoomDetailsPage = () => {
                 <NavLink to={""}>
                   <button
                     className="btn bg-[#0682a1] font-semibold text-lg text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition"
-                    onClick={() =>
-                      document.getElementById("my_modal_5").showModal()
-                    }
+                    onClick={() => {
+                      if (!user || !user?.email) {
+                        //  Redirect unauthenticated users to login
+                        navigate("/signin");
+                      } else {
+                        // Show modal if user is logged in
+                        document.getElementById("my_modal_5").showModal();
+                      }
+                    }}
                   >
                     Book Now
                   </button>
