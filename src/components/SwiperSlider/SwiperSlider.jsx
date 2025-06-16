@@ -37,7 +37,7 @@ const SwiperSlider = () => {
             }}
           >
             <div className="flex h-full items-center justify-start p-8 md:p-16">
-              <div className="bg-black bg-opacity-50 p-6 md:p-10 rounded-lg max-w-xl">
+              <div className="bg-black bg-opacity-50 p-3 md:p-10 rounded-lg max-w-xl">
                 <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
                   Book Luxury Hotels, Effortlessly
                 </h1>
@@ -65,7 +65,7 @@ const SwiperSlider = () => {
             }}
           >
             <div className="flex h-full items-center justify-start p-8 md:p-16">
-              <div className="bg-black bg-opacity-50 p-6 md:p-10 rounded-lg max-w-xl">
+              <div className="bg-black bg-opacity-50 p-5 md:p-10 rounded-lg max-w-xl">
                 <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
                   Your Stay, Your Way
                 </h1>
@@ -93,7 +93,7 @@ const SwiperSlider = () => {
             }}
           >
             <div className="flex h-full items-center justify-start p-8 md:p-16">
-              <div className="bg-black bg-opacity-50 p-6 md:p-10 rounded-lg max-w-xl">
+              <div className="bg-black bg-opacity-50 p-5 md:p-10 rounded-lg max-w-xl">
                 <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold">
                   Trusted Hotels. Instant Booking.
                 </h1>

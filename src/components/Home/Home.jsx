@@ -8,12 +8,13 @@ import { useLoaderData } from "react-router";
 import HotelsCollection from "../HotelsCollection/HotelsCollection";
 import PigeonMapsDetails from "../PigeonMapsDetails/PigeonMapsDetails";
 import ReviewShow from "../ReviewShow/ReviewShow";
+import HomePageModal from "../HomePageModal/HomePageModal";
 
 const Home = () => {
   const hotelsInfo = useLoaderData();
   // console.log(hotelsInfo);
   return (
-    <div className="max-w-screen-2xl mx-auto px-16 py-1">
+    <div className="max-w-screen-2xl mx-auto md:px-16 py-1">
       <div className="mt-10 mb-10">
         <SwiperSlider></SwiperSlider>
       </div>
@@ -26,6 +27,10 @@ const Home = () => {
       <div className="mt-10 mb-10">
         <PigeonMapsDetails></PigeonMapsDetails>
       </div>
+      <div className="mt-10 mb-10">
+        <HomePageModal></HomePageModal>
+      </div>
+
       <div>
         <HotelsCollection
           key={hotelsInfo._id}

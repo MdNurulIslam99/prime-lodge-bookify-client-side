@@ -3,12 +3,12 @@ import MyBookingsRow from "../MyBookingsRow/MyBookingsRow";
 
 const MyBookingDetails = ({ myBookingPromise }) => {
   const initialData = use(myBookingPromise); // initial data from suspense
-  const [myBookings, setMyBookings] = useState(initialData); // ✅ NEW state
+  const [myBookings, setMyBookings] = useState(initialData); //  NEW state
 
   const handleCancelSuccess = (deletedId) => {
     setMyBookings((prev) =>
       prev.filter((booking) => booking._id !== deletedId)
-    ); // ✅ Remove from list
+    ); //  Remove from list
   };
 
   return (
@@ -33,7 +33,7 @@ const MyBookingDetails = ({ myBookingPromise }) => {
                 index={index}
                 key={myBooking._id}
                 myBooking={myBooking}
-                onCancelSuccess={handleCancelSuccess} // ✅ Pass down cancel handler
+                onCancelSuccess={handleCancelSuccess} //  Pass down cancel handler
               />
             ))}
           </tbody>

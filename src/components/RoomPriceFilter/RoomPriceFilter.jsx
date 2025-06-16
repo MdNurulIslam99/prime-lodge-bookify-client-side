@@ -3,11 +3,11 @@ import RoomPageCard from "./RoomPageCard";
 import axios from "axios";
 
 const RoomPriceFilter = () => {
-  // 🔧 [UPDATED] Filter state for min and max price
+  // Filter state for min and max price
   const [filters, setFilters] = useState({ minPrice: "", maxPrice: "" });
   const [rooms, setRooms] = useState([]);
 
-  // 🔧 [UPDATED] Fetch rooms with filters applied (no try-catch)
+  // Fetch rooms with filters applied (no try-catch)
   const fetchRooms = async () => {
     axios
       .get("http://localhost:3000/hotels", {
@@ -35,7 +35,7 @@ const RoomPriceFilter = () => {
 
   return (
     <div>
-      {/* 🔧 [UPDATED] Filter UI */}
+      {/* Filter UI */}
       <form onSubmit={handleSubmit} className="mb-6 flex gap-4">
         <input
           type="number"

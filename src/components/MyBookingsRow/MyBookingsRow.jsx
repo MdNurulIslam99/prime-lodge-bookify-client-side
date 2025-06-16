@@ -2,10 +2,11 @@ import React, { use, useState } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { AuthContext } from "../../contexts/AuthContext/AuthContext";
+import moment from "moment"; //  Added for cancellation deadline check
 
 const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
   const {
-    _id, // booking id
+    _id,
     roomName,
     hotelRoomImageUrl,
     address,
@@ -16,14 +17,26 @@ const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
     roomId,
   } = myBooking || {};
 
-  // ✅ Auth context
   const { user } = use(AuthContext);
 
-  // ✅ States for review modal
-  const [showReviewModal, setShowReviewModal] = useState(false);
   const [reviewData, setReviewData] = useState({ rating: "", comment: "" });
 
-  const handleCancel = (id) => {
+  //  Restrict cancellation to 2 days before booking date
+  const handleCancel = (id, bookingDate) => {
+    const today = moment().startOf("day");
+    const cancelDeadline = moment(bookingDate)
+      .subtract(2, "days")
+      .startOf("day"); //  2-day restriction
+
+    if (today.isAfter(cancelDeadline)) {
+      Swal.fire(
+        "Too Late!",
+        "You can only cancel up to 2 days before the booking date.", //  Message updated
+        "warning"
+      );
+      return;
+    }
+
     Swal.fire({
       title: "Are you sure?",
       text: "Do you want to cancel this booking?",
@@ -38,7 +51,7 @@ const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
             if (res.data.deletedCount > 0) {
               axios
                 .patch(`http://localhost:3000/hotels/${roomId}`, {
-                  roomStatus: "available",
+                  roomStatus: "available", //  Make room available again
                 })
                 .then((patchRes) => {
                   if (patchRes.data.modifiedCount > 0) {
@@ -108,7 +121,6 @@ const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
     }
   };
 
-  // ✅ UPDATED: Review submit logic
   const handleReviewSubmit = (e) => {
     e.preventDefault();
 
@@ -119,18 +131,16 @@ const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
       comment: reviewData.comment,
     };
 
-    // ✅ CHANGED: Submit review to backend (which pushes to hotel doc)
     axios.post(`http://localhost:3000/hotels/${roomId}`, review).then((res) => {
-      // ✅ CHANGED: Removed insertedId check; backend uses updateOne now
       if (res.data.modifiedCount > 0) {
-        Swal.fire("Thank you!", "Your review has been submitted.", "success"); // ✅ Marked
+        Swal.fire("Thank you!", "Your review has been submitted.", "success");
       } else {
-        Swal.fire("Oops!", "Failed to submit review.", "error"); // ✅ Marked
+        Swal.fire("Oops!", "Failed to submit review.", "error");
       }
     });
 
     setReviewData({ rating: "", comment: "" });
-    setShowReviewModal(false);
+    document.getElementById(`review_modal_${_id}`).close();
   };
 
   return (
@@ -164,9 +174,10 @@ const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
           </button>
         </th>
         <th>
-          {/* ✅ Review Button */}
           <button
-            onClick={() => setShowReviewModal(true)}
+            onClick={() =>
+              document.getElementById(`review_modal_${_id}`).showModal()
+            }
             className="btn btn-ghost btn-md"
           >
             Reviews
@@ -174,7 +185,7 @@ const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
         </th>
         <th>
           <button
-            onClick={() => handleCancel(_id)}
+            onClick={() => handleCancel(_id, date)} //  Pass date to cancellation check
             className="btn btn-ghost btn-md"
           >
             Cancel Booking
@@ -183,61 +194,55 @@ const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
       </tr>
 
       {/* ✅ Review Modal */}
-      {showReviewModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 max-w-md w-full">
-            <h2 className="text-xl font-bold mb-4">Submit a Review</h2>
-            <form onSubmit={handleReviewSubmit}>
-              <div className="mb-4">
-                <label>Username</label>
-                <input
-                  type="text"
-                  readOnly
-                  value={user.displayName}
-                  className="input input-bordered w-full"
-                />
-              </div>
-              <div className="mb-4">
-                <label>Rating (1–5)</label>
-                <input
-                  type="number"
-                  min="1"
-                  max="5"
-                  required
-                  value={reviewData.rating}
-                  onChange={(e) =>
-                    setReviewData({ ...reviewData, rating: e.target.value })
-                  }
-                  className="input input-bordered w-full"
-                />
-              </div>
-              <div className="mb-4">
-                <label>Comment</label>
-                <textarea
-                  required
-                  value={reviewData.comment}
-                  onChange={(e) =>
-                    setReviewData({ ...reviewData, comment: e.target.value })
-                  }
-                  className="textarea textarea-bordered w-full"
-                />
-              </div>
-              <div className="flex justify-end gap-2">
-                <button
-                  type="button"
-                  onClick={() => setShowReviewModal(false)}
-                  className="btn btn-outline"
-                >
-                  Cancel
-                </button>
-                <button type="submit" className="btn btn-success">
-                  Submit
-                </button>
-              </div>
-            </form>
-          </div>
+      <dialog id={`review_modal_${_id}`} className="modal">
+        <div className="modal-box">
+          <h2 className="text-xl font-bold mb-4">Submit a Review</h2>
+          <form onSubmit={handleReviewSubmit}>
+            <div className="mb-4">
+              <label>Username</label>
+              <input
+                type="text"
+                readOnly
+                value={user.displayName}
+                className="input input-bordered w-full"
+              />
+            </div>
+            <div className="mb-4">
+              <label>Rating (1–5)</label>
+              <input
+                type="number"
+                min="1"
+                max="5"
+                required
+                value={reviewData.rating}
+                onChange={(e) =>
+                  setReviewData({ ...reviewData, rating: e.target.value })
+                }
+                className="input input-bordered w-full"
+              />
+            </div>
+            <div className="mb-4">
+              <label>Comment</label>
+              <textarea
+                required
+                value={reviewData.comment}
+                onChange={(e) =>
+                  setReviewData({ ...reviewData, comment: e.target.value })
+                }
+                className="textarea textarea-bordered w-full"
+              />
+            </div>
+            <div className="modal-action">
+              <form method="dialog">
+                <button className="btn">Close</button>
+              </form>
+              <button type="submit" className="btn btn-success">
+                Submit
+              </button>
+            </div>
+          </form>
         </div>
-      )}
+      </dialog>
     </>
   );
 };
