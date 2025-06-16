@@ -146,7 +146,7 @@ const NavBar = () => {
             <div>
               <button
                 onClick={handleLogOut}
-                className="btn bg-[#0EA106] rounded-4xl text-white px-3 md:px-5 fontMulish text-base md:text-xl"
+                className="btn bg-[#06a159] rounded-4xl text-white px-3 md:px-5 fontMulish text-base md:text-xl"
               >
                 LogOut
               </button>

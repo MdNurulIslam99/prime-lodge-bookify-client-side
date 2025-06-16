@@ -13,12 +13,14 @@ import SignUp from "../components/SignUp/SignUp";
 import HotelsDetailsCard from "../components/HotelsDetailsCard/HotelsDetailsCard";
 import RoomDetailsPage from "../components/RoomDetailsPage/RoomDetailsPage";
 import PrivateRoute from "../components/routes/PrivateRoute";
+import ErrorMassage from "../components/ErrorMassage/ErrorMassage";
 // import HotelCardInfo from "../components/HotelCardInfo/HotelCardInfo";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayouts></MainLayouts>,
+    errorElement: <ErrorMassage></ErrorMassage>,
     children: [
       {
         index: true,
@@ -31,10 +33,12 @@ const router = createBrowserRouter([
           </p>
         ),
         loader: () => fetch("http://localhost:3000/hotels"),
+        errorElement: <ErrorMassage></ErrorMassage>,
       },
       {
         path: "/roomPage",
         element: <RoomPage></RoomPage>,
+        errorElement: <ErrorMassage></ErrorMassage>,
         // hydrateFallbackElement: (
         //   <p>
         //     <span className="loading loading-bars loading-md"></span>
@@ -56,6 +60,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:3000/hotels/${params.id}`),
+        errorElement: <ErrorMassage></ErrorMassage>,
       },
       {
         path: "/myBookings",
@@ -64,34 +69,42 @@ const router = createBrowserRouter([
             <MyBookings></MyBookings>
           </PrivateRoute>
         ),
+        errorElement: <ErrorMassage></ErrorMassage>,
       },
       {
         path: "/hotelsDetailsCard",
         element: <HotelsDetailsCard></HotelsDetailsCard>,
+        errorElement: <ErrorMassage></ErrorMassage>,
       },
       {
         path: "/termsCondition",
         element: <TermsConditions></TermsConditions>,
+        errorElement: <ErrorMassage></ErrorMassage>,
       },
       {
         path: "/privacyPolicy",
         element: <PrivacyPolicy></PrivacyPolicy>,
+        errorElement: <ErrorMassage></ErrorMassage>,
       },
       {
         path: "/contact",
         element: <ContactUs></ContactUs>,
+        errorElement: <ErrorMassage></ErrorMassage>,
       },
       {
         path: "/faqSection",
         element: <FaqSection></FaqSection>,
+        errorElement: <ErrorMassage></ErrorMassage>,
       },
       {
         path: "/signin",
         element: <SignIn></SignIn>,
+        errorElement: <ErrorMassage></ErrorMassage>,
       },
       {
         path: "/signup",
         element: <SignUp></SignUp>,
+        errorElement: <ErrorMassage></ErrorMassage>,
       },
     ],
   },

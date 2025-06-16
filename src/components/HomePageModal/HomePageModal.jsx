@@ -17,9 +17,9 @@ const HomePageModal = () => {
 
   return (
     <div>
-      <h1 className="text-4xl font-bold text-center my-10">
+      {/* <h1 className="text-4xl font-bold text-center my-10">
         Welcome to Our Hotel
-      </h1>
+      </h1> */}
       <HomeModalShow offers={offers} />
     </div>
   );
