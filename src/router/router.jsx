@@ -35,14 +35,14 @@ const router = createBrowserRouter([
       {
         path: "/roomPage",
         element: <RoomPage></RoomPage>,
-        hydrateFallbackElement: (
-          <p>
-            <span className="loading loading-bars loading-md"></span>
-            <span className="loading loading-bars loading-lg"></span>
-            <span className="loading loading-bars loading-xl"></span>
-          </p>
-        ),
-        loader: () => fetch("http://localhost:3000/hotels"),
+        // hydrateFallbackElement: (
+        //   <p>
+        //     <span className="loading loading-bars loading-md"></span>
+        //     <span className="loading loading-bars loading-lg"></span>
+        //     <span className="loading loading-bars loading-xl"></span>
+        //   </p>
+        // ),
+        // loader: () => fetch("http://localhost:3000/hotels"),
       },
       {
         path: "/roomDetailsPage/:id",

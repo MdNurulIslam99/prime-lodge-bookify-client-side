@@ -53,7 +53,7 @@ const RoomDetailsPage = () => {
       roomStatus: "booked",
     };
 
-    // Save booking info to database
+    // Save booking date info to database
     axios
       .post("http://localhost:3000/hotelsBooking", bookingHotelData)
       .then((res) => {
@@ -76,7 +76,7 @@ const RoomDetailsPage = () => {
     const roomStatus = {
       roomStatus: "unavailable",
     };
-
+    // Update booking roomStatus info to database
     axios
       .patch(`http://localhost:3000/hotels/roomDetailsPage/${_id}`, roomStatus)
       .then((res) => {
