@@ -1,5 +1,6 @@
 import React, { use, useState } from "react";
 import MyBookingsRow from "../MyBookingsRow/MyBookingsRow";
+import { Helmet } from "react-helmet";
 
 const MyBookingDetails = ({ myBookingPromise }) => {
   const initialData = use(myBookingPromise); // initial data from suspense
@@ -13,10 +14,13 @@ const MyBookingDetails = ({ myBookingPromise }) => {
 
   return (
     <div>
-      <div className="overflow-x-auto">
+      <Helmet>
+        <title>MyBookingDetails</title>
+      </Helmet>
+      <div className="overflow-x-auto bg-base-300 shadow-2xl rounded-2xl p-5 mb-5 mt-5">
         <table className="table">
           <thead>
-            <tr>
+            <tr className="text-lg font-semibold">
               <th>No</th>
               <th>Name & Address</th>
               <th>Price</th>

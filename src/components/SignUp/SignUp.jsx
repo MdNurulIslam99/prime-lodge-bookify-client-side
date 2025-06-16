@@ -5,6 +5,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet";
 
 const SignUp = () => {
   const { createUser, setUser, updatedUser, signInWithGoogle } =
@@ -90,6 +91,9 @@ const SignUp = () => {
 
   return (
     <div className="flex justify-center items-center py-10 px-5 md:px-0">
+      <Helmet>
+        <title>signUp</title>
+      </Helmet>
       <div className="w-full max-w-md p-4 rounded-xl shadow-2xl sm:p-8 bg-black text-white">
         <h2 className="mb-6 mt-3 text-3xl font-semibold text-center">
           Sign Up to your Account

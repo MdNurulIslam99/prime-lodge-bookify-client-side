@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import RoomPageCard from "../RoomPageCard/RoomPageCard";
 import RoomPageTitle from "../RoomPageTitle/RoomPageTitle";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const RoomPage = () => {
   const [allHotelsData, setAllHotelsData] = useState([]);
@@ -47,6 +48,9 @@ const RoomPage = () => {
 
   return (
     <div className="py-12">
+      <Helmet>
+        <title>RoomPage</title>
+      </Helmet>
       <form
         onSubmit={handleFilterSubmit}
         className="mb-8 flex gap-4 justify-center"

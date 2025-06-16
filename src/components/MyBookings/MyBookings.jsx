@@ -2,12 +2,20 @@ import React, { Suspense, use } from "react";
 import MyBookingDetails from "../MyBookingDetails/MyBookingDetails";
 import { AuthContext } from "../../contexts/AuthContext/AuthContext";
 import { myBookingPromise } from "../../Api/myBookingApi";
+import { Helmet } from "react-helmet";
+import MyBookingPageTitle from "../MyBookingPageTitle/MyBookingPageTitle";
 
 const MyBookings = () => {
   const { user } = use(AuthContext);
   return (
     <div>
-      {/* <h1>this is MyBookings</h1> */}
+      <Helmet>
+        <title>MyBookings</title>
+      </Helmet>
+
+      <div className="mt-5 mb-10">
+        <MyBookingPageTitle></MyBookingPageTitle>
+      </div>
       <Suspense
         fallback={<span className="loading loading-bars loading-xl"></span>}
       >

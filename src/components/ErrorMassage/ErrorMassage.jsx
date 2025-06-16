@@ -1,12 +1,13 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router";
 
 const ErrorMassage = () => {
   return (
     <div className="">
-      {/* <Helmet>
+      <Helmet>
         <title>ErrorCard</title>
-      </Helmet> */}
+      </Helmet>
       <div className="flex justify-center items-center flex-col gap-3 mt-20 mb-5">
         <img
           className="bg-gray-100 shadow-2xl rounded-2xl md:w-[550px] md:h-[350px] w-[350px]"

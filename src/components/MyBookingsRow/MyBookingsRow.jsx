@@ -2,7 +2,7 @@ import React, { use, useState } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { AuthContext } from "../../contexts/AuthContext/AuthContext";
-import moment from "moment"; //  Added for cancellation deadline check
+import moment from "moment";
 
 const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
   const {
@@ -21,17 +21,19 @@ const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
 
   const [reviewData, setReviewData] = useState({ rating: "", comment: "" });
 
+  const [bookingDate, setBookingDate] = useState(date); //  Added state to manage updated date
+
   //  Restrict cancellation to 2 days before booking date
   const handleCancel = (id, bookingDate) => {
     const today = moment().startOf("day");
     const cancelDeadline = moment(bookingDate)
       .subtract(2, "days")
-      .startOf("day"); //  2-day restriction
+      .startOf("day");
 
     if (today.isAfter(cancelDeadline)) {
       Swal.fire(
         "Too Late!",
-        "You can only cancel up to 2 days before the booking date.", //  Message updated
+        "You can only cancel up to 2 days before the booking date.",
         "warning"
       );
       return;
@@ -51,7 +53,7 @@ const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
             if (res.data.deletedCount > 0) {
               axios
                 .patch(`http://localhost:3000/hotels/${roomId}`, {
-                  roomStatus: "available", //  Make room available again
+                  roomStatus: "available",
                 })
                 .then((patchRes) => {
                   if (patchRes.data.modifiedCount > 0) {
@@ -94,7 +96,7 @@ const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
       title: "Select new booking date",
       input: "date",
       inputLabel: "New Booking Date",
-      inputValue: date,
+      inputValue: bookingDate, //  Use state value
       showCancelButton: true,
       confirmButtonText: "Update Date",
       inputValidator: (value) => {
@@ -110,7 +112,7 @@ const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
         .then((res) => {
           if (res.data.modifiedCount > 0) {
             Swal.fire("Updated!", "Booking date updated.", "success");
-            window.location.reload();
+            setBookingDate(newDate); //  Update UI without reloading
           } else {
             Swal.fire("Warning", "Date not updated.", "warning");
           }
@@ -145,7 +147,7 @@ const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
 
   return (
     <>
-      <tr>
+      <tr className="text-base font-semibold">
         <th>
           <label>{index + 1}</label>
         </th>
@@ -162,14 +164,17 @@ const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
             </div>
           </div>
         </td>
-        <td>
-          {pricePerNight}
+        <td className="space-x-2">
+          <span>{pricePerNight}</span>
           <span className="badge badge-ghost badge-sm">{currency}</span>
         </td>
         <td>{roomStatus}</td>
-        <td>{date}</td>
+        <td>{bookingDate}</td> {/*  Dynamically show updated date */}
         <th>
-          <button onClick={handleUpdateDate} className="btn btn-ghost btn-md">
+          <button
+            onClick={handleUpdateDate}
+            className="btn text-base bg-emerald-300 rounded-lg font-semibold btn-ghost btn-md"
+          >
             Update Date
           </button>
         </th>
@@ -178,22 +183,22 @@ const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
             onClick={() =>
               document.getElementById(`review_modal_${_id}`).showModal()
             }
-            className="btn btn-ghost btn-md"
+            className="btn btn-ghost bg-blue-300 rounded-lg font-semibold text-base btn-md"
           >
             Reviews
           </button>
         </th>
         <th>
           <button
-            onClick={() => handleCancel(_id, date)} //  Pass date to cancellation check
-            className="btn btn-ghost btn-md"
+            onClick={() => handleCancel(_id, bookingDate)} //  Pass current state
+            className="btn btn-ghost bg-red-300 rounded-lg text-base font-semibold btn-md"
           >
             Cancel Booking
           </button>
         </th>
       </tr>
 
-      {/* ✅ Review Modal */}
+      {/*  Review Modal */}
       <dialog id={`review_modal_${_id}`} className="modal">
         <div className="modal-box">
           <h2 className="text-xl font-bold mb-4">Submit a Review</h2>

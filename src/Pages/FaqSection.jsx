@@ -1,9 +1,13 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router";
 
 const FaqSection = () => {
   return (
     <div className="bg-gray-200  rounded-2xl">
+      <Helmet>
+        <title>FaqSection</title>
+      </Helmet>
       <div>
         <header className="bg-indigo-300 text-white p-4">
           <div className="max-w-7xl mx-auto flex justify-between items-center">

@@ -1,9 +1,13 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router";
 
 const TermsConditions = () => {
   return (
     <div className="bg-gray-100 text-gray-800 ">
+      <Helmet>
+        <title>TermsConditions</title>
+      </Helmet>
       <div>
         <header className="bg-indigo-300 text-white p-4">
           <div className="max-w-7xl mx-auto flex justify-between items-center">

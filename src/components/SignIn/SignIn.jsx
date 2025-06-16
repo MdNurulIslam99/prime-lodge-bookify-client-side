@@ -4,6 +4,7 @@ import { AuthContext } from "../../contexts/AuthContext/AuthContext";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const SignIn = () => {
   const { signInUser, signInWithGoogle } = use(AuthContext);
@@ -59,6 +60,9 @@ const SignIn = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>signIn</title>
+      </Helmet>
       <div className="flex justify-center items-center py-10 px-5 md:px-0">
         <div className="w-full max-w-md p-4 rounded-xl shadow-2xl sm:p-8 bg-black text-white">
           <h2 className="mb-6 mt-3 text-3xl font-semibold text-center">

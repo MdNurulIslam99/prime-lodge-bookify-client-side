@@ -1,12 +1,16 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router";
 
 const PrivacyPolicy = () => {
   return (
     <div className="bg-gray-50 text-gray-800 font-sans">
+      <Helmet>
+        <title>PrivacyPolicy</title>
+      </Helmet>
       <header className="bg-indigo-300 text-white p-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Roommate Finder</h1>
+          <h1 className="text-2xl font-bold">PrimeLodgeBookify</h1>
           <nav>
             <Link to="/" className="hover:underline text-2xl font-bold ">
               Home

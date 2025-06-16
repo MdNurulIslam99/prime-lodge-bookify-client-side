@@ -120,13 +120,6 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end  space-x-5">
-        {/* <NavLink to="/signIn" className="btn ">
-          Login
-        </NavLink>
-        <NavLink to="/signup" className="btn ">
-          Register
-        </NavLink> */}
-
         {user ? (
           <div className="flex gap-3">
             <div className="relative group">

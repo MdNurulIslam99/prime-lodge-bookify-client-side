@@ -1,12 +1,86 @@
-# React + Vite
+# PrimeLodgeBookify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-featured roommate finding platform built with React, Firebase, Node.js, and Express. It allows users to explore, connect with potential roommates, and manage shared living arrangements with real-time updates and secure access.
 
-Currently, two official plugins are available:
+**Live Site**: [PrimeLodgeBookify Live Link](https://room-mate-finder-auth.web.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Key Features
 
-## Expanding the ESLint configuration
+### 🔍 Explore Listings
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Browse roommate listings with advanced filters:
+  - Location
+  - Budget range
+  - Availability date
+  - Preferred roommate preferences
+  - Property type (apartment, house, etc.)
+
+### 🔒 Secure Matching System
+
+- Authenticated users can connect with potential roommates
+- Real-time availability updates
+- Privacy-focused contact system
+
+### 📅 Booking & Cancellation
+
+- Intuitive booking system with date selection
+- Smart cancellation policy:
+  - Cancel up to 1 day before move-in date
+  - Automatic availability updates upon cancellation
+
+### 👤 User Management
+
+- Firebase Authentication for secure signIn/signUp
+- Personalized dashboard to manage:
+  - Your listings
+  - Current matches
+  - Saved favorites
+  - Message history
+
+### 🎨 Interactive UI Components
+
+- Modern modal system using HTML `<dialog>` with DaisyUI
+- Responsive design for all devices
+- Animated transitions with Framer Motion
+- Interactive maps for location visualization
+
+## 🛠️ Technology Stack
+
+### Frontend
+
+- React.js with Vite
+- Tailwind CSS with DaisyUI
+- Framer Motion for animations
+- React Leaflet for maps
+- Swiper for interactive carousels
+
+### Backend
+
+- Firebase Authentication
+- Firebase Realtime Database/Firestore
+- Node.js with Express
+
+### Key Packages
+
+- @tailwindcss/vite
+- axios
+- firebase
+- framer-motion
+- leaflet
+- leaflet-defaulticon-compatibility
+- lottie-react
+- moment
+- pigeon-maps
+- react
+- react-datepicker
+- react-dom
+- react-helmet
+- react-icons
+- react-leaflet
+- react-lottie
+- react-router
+- react-simple-typewriter
+- react-toastify
+- sweetalert2
+- swiper
+- tailwindcss

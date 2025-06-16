@@ -9,6 +9,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import "react-toastify/dist/ReactToastify.css";
 import { toast, ToastContainer } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const RoomDetailsPage = () => {
   const detailsData = useLoaderData();
@@ -94,6 +95,9 @@ const RoomDetailsPage = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>RoomDetails</title>
+      </Helmet>
       <div className="max-w-6xl mx-auto  mb-10">
         <RoomPageDetailsTitle />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-5 bg-base-200 mt-5 shadow-2xl rounded-2xl">
