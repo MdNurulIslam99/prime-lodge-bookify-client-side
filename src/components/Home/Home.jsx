@@ -12,6 +12,7 @@ import HomePageModal from "../HomePageModal/HomePageModal";
 import { Helmet } from "react-helmet";
 import { ThemeProvider } from "../../contexts/ThemeContext";
 import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
+import HotelNewPart from "../HotelNewPart/HotelNewPart";
 
 const Home = () => {
   const hotelsInfo = useLoaderData();
@@ -52,8 +53,12 @@ const Home = () => {
           <ReviewShow></ReviewShow>
         </div>
         <div className="mt-10 mb-10">
+          <HotelNewPart></HotelNewPart>
+        </div>
+        <div className="mt-10 mb-10">
           <LottieCard></LottieCard>
         </div>
+
         <div className="mt-10 mb-10">
           <HotelService></HotelService>
         </div>
