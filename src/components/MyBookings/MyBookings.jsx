@@ -1,12 +1,15 @@
 import React, { Suspense, use } from "react";
 import MyBookingDetails from "../MyBookingDetails/MyBookingDetails";
 import { AuthContext } from "../../contexts/AuthContext/AuthContext";
-import { myBookingPromise } from "../../Api/myBookingApi";
+// import { myBookingPromise } from "../../Api/myBookingApi";
 import { Helmet } from "react-helmet";
 import MyBookingPageTitle from "../MyBookingPageTitle/MyBookingPageTitle";
+import useBookingApi from "../../Api/useBookingApi";
 
 const MyBookings = () => {
   const { user } = use(AuthContext);
+  const { myBookingPromise } = useBookingApi();
+  console.log("token in the context ", user.accessToken);
   return (
     <div>
       <Helmet>

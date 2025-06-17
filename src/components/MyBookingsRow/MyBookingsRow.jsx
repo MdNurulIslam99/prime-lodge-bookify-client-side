@@ -48,16 +48,13 @@ const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`https://primelodge-bookify.vercel.app/hotelsBooking/${id}`)
+          .delete(`http://localhost:3000/hotelsBooking/${id}`)
           .then((res) => {
             if (res.data.deletedCount > 0) {
               axios
-                .patch(
-                  `https://primelodge-bookify.vercel.app/hotels/${roomId}`,
-                  {
-                    roomStatus: "available",
-                  }
-                )
+                .patch(`http://localhost:3000/hotels/${roomId}`, {
+                  roomStatus: "available",
+                })
                 .then((patchRes) => {
                   if (patchRes.data.modifiedCount > 0) {
                     Swal.fire(
@@ -109,7 +106,7 @@ const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
 
     if (newDate) {
       axios
-        .patch(`https://primelodge-bookify.vercel.app/hotelsBooking/${_id}`, {
+        .patch(`http://localhost:3000/hotelsBooking/${_id}`, {
           date: newDate,
         })
         .then((res) => {
@@ -136,15 +133,13 @@ const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
       comment: reviewData.comment,
     };
 
-    axios
-      .post(`https://primelodge-bookify.vercel.app/hotels/${roomId}`, review)
-      .then((res) => {
-        if (res.data.modifiedCount > 0) {
-          Swal.fire("Thank you!", "Your review has been submitted.", "success");
-        } else {
-          Swal.fire("Oops!", "Failed to submit review.", "error");
-        }
-      });
+    axios.post(`http://localhost:3000/hotels/${roomId}`, review).then((res) => {
+      if (res.data.modifiedCount > 0) {
+        Swal.fire("Thank you!", "Your review has been submitted.", "success");
+      } else {
+        Swal.fire("Oops!", "Failed to submit review.", "error");
+      }
+    });
 
     setReviewData({ rating: "", comment: "" });
     document.getElementById(`review_modal_${_id}`).close();
@@ -174,11 +169,11 @@ const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
           <span className="badge badge-ghost badge-sm">{currency}</span>
         </td>
         <td>{roomStatus}</td>
-        <td>{bookingDate}</td> {/*  Dynamically show updated date */}
+        <td>{bookingDate}</td>
         <th>
           <button
             onClick={handleUpdateDate}
-            className="btn text-base bg-emerald-300 rounded-lg font-semibold btn-ghost btn-md"
+            className="btn p-2  bg-emerald-300 rounded-lg font-semibold btn-ghost btn-md"
           >
             Update Date
           </button>
@@ -188,71 +183,81 @@ const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
             onClick={() =>
               document.getElementById(`review_modal_${_id}`).showModal()
             }
-            className="btn btn-ghost bg-blue-300 rounded-lg font-semibold text-base btn-md"
+            className="btn btn-ghost bg-blue-300 rounded-lg font-semibold  btn-md"
           >
             Reviews
           </button>
         </th>
         <th>
           <button
-            onClick={() => handleCancel(_id, bookingDate)} //  Pass current state
-            className="btn btn-ghost bg-red-300 rounded-lg text-base font-semibold btn-md"
+            onClick={() => handleCancel(_id, bookingDate)}
+            className="btn btn-ghost bg-red-300 rounded-lg p-2  font-semibold btn-md"
           >
             Cancel Booking
           </button>
         </th>
       </tr>
 
-      {/*  Review Modal */}
-      <dialog id={`review_modal_${_id}`} className="modal">
-        <div className="modal-box">
-          <h2 className="text-xl font-bold mb-4">Submit a Review</h2>
-          <form onSubmit={handleReviewSubmit}>
-            <div className="mb-4">
-              <label>Username</label>
-              <input
-                type="text"
-                readOnly
-                value={user.displayName}
-                className="input input-bordered w-full"
-              />
-            </div>
-            <div className="mb-4">
-              <label>Rating (1–5)</label>
-              <input
-                type="number"
-                min="1"
-                max="5"
-                required
-                value={reviewData.rating}
-                onChange={(e) =>
-                  setReviewData({ ...reviewData, rating: e.target.value })
-                }
-                className="input input-bordered w-full"
-              />
-            </div>
-            <div className="mb-4">
-              <label>Comment</label>
-              <textarea
-                required
-                value={reviewData.comment}
-                onChange={(e) =>
-                  setReviewData({ ...reviewData, comment: e.target.value })
-                }
-                className="textarea textarea-bordered w-full"
-              />
-            </div>
-            <div className="modal-action">
-              <form method="dialog">
-                <button className="btn">Close</button>
+      {/*  Move dialog outside of table entirely */}
+      <tr>
+        <td colSpan="100%">
+          <dialog id={`review_modal_${_id}`} className="modal">
+            <div className="modal-box">
+              <h2 className="text-xl font-bold mb-4">Submit a Review</h2>
+              <form onSubmit={handleReviewSubmit}>
+                <div className="mb-4">
+                  <label>Username</label>
+                  <input
+                    type="text"
+                    readOnly
+                    value={user.displayName}
+                    className="input input-bordered w-full"
+                  />
+                </div>
+                <div className="mb-4">
+                  <label>Rating (1–5)</label>
+                  <input
+                    type="number"
+                    min="1"
+                    max="5"
+                    required
+                    value={reviewData.rating}
+                    onChange={(e) =>
+                      setReviewData({ ...reviewData, rating: e.target.value })
+                    }
+                    className="input input-bordered w-full"
+                  />
+                </div>
+                <div className="mb-4">
+                  <label>Comment</label>
+                  <textarea
+                    required
+                    value={reviewData.comment}
+                    onChange={(e) =>
+                      setReviewData({ ...reviewData, comment: e.target.value })
+                    }
+                    className="textarea textarea-bordered w-full"
+                  />
+                </div>
+                <div className="modal-action">
+                  <button
+                    type="button"
+                    className="btn"
+                    onClick={() =>
+                      document.getElementById(`review_modal_${_id}`).close()
+                    }
+                  >
+                    Close
+                  </button>
+                  <button type="submit" className="btn btn-success">
+                    Submit
+                  </button>
+                </div>
               </form>
-              <button type="submit" className="btn btn-success">
-                Submit
-              </button>
             </div>
-          </form>
-        </div>
-      </dialog>
+          </dialog>
+        </td>
+      </tr>
     </>
   );
 };

@@ -2,7 +2,7 @@
 
 A full-featured roommate finding platform built with React, Firebase, Node.js, and Express. It allows users to explore, connect with potential roommates, and manage shared living arrangements with real-time updates and secure access.
 
-**Live Site**: [PrimeLodgeBookify Live Link](https://room-mate-finder-auth.web.app/)
+**Live Site**: [PrimeLodgeBookify Live Link](https://modern-hotel-bookings.web.app/)
 
 ## ✨ Key Features
 

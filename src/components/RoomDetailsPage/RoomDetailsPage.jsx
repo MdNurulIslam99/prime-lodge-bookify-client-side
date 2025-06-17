@@ -56,10 +56,7 @@ const RoomDetailsPage = () => {
 
     // Save booking date info to database
     axios
-      .post(
-        "https://primelodge-bookify.vercel.app/hotelsBooking",
-        bookingHotelData
-      )
+      .post("http://localhost:3000/hotelsBooking", bookingHotelData)
       .then((res) => {
         if (res.data.insertedId) {
           Swal.fire({
@@ -82,10 +79,7 @@ const RoomDetailsPage = () => {
     };
     // Update booking roomStatus info to database
     axios
-      .patch(
-        `https://primelodge-bookify.vercel.app/hotels/roomDetailsPage/${_id}`,
-        roomStatus
-      )
+      .patch(`http://localhost:3000/hotels/roomDetailsPage/${_id}`, roomStatus)
       .then((res) => {
         if (res.data.modifiedCount > 0) {
           setRoomStatusState("unavailable"); // Update ui after db update
