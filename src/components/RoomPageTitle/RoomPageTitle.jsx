@@ -2,7 +2,7 @@ import React from "react";
 
 const RoomPageTitle = () => {
   return (
-    <div className="mb-10 bg-gray-300 shadow-2xl rounded-2xl p-6 space-y-3">
+    <div className="mb-10 bg-gray-200 shadow-2xl rounded-2xl p-6 space-y-3">
       <h1 className="text-4xl font-extrabold text-center">
         Explore Premier Hotel Destinations Across
       </h1>
