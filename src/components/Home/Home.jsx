@@ -18,9 +18,9 @@ const Home = () => {
   // console.log(hotelsInfo);
   return (
     <ThemeProvider>
-      <div>
+      {/* <div>
         <ThemeSwitch></ThemeSwitch>
-      </div>
+      </div> */}
 
       <div className="max-w-screen-2xl mx-auto md:px-16 py-1 dark:bg-gray-900 dark:text-blue-600">
         <Helmet>
