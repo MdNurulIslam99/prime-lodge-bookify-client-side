@@ -1,6 +1,7 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useLoaderData } from "react-router";
+import { FaLocationDot } from "react-icons/fa6";
 
 const HotelLocationMap = () => {
   const hotelsLocation = useLoaderData();
@@ -28,7 +29,10 @@ const HotelLocationMap = () => {
           >
             <Popup>
               <div>
-                <strong>📍 {hotel.name}</strong> <br />
+                <strong>
+                  <FaLocationDot /> {hotel.name}
+                </strong>{" "}
+                <br />
                 {hotel.location}, {hotel.city} <br />
                 <small>{hotel.address}</small>
               </div>

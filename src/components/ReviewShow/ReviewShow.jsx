@@ -12,7 +12,7 @@ const ReviewShow = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/hotels")
+      .get("https://primelodge-bookify.vercel.app/hotels")
       .then((response) => {
         const hotels = response.data || [];
         const reviews = hotels.flatMap((hotel) => hotel.reviews || []);

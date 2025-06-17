@@ -48,7 +48,7 @@ const HotelCardInfo = ({ hotelData }) => {
             </p>
           </div>
           <NavLink to={`/roomDetailsPage/${_id}`}>
-            <button className="  w-full bg-[#06a160] font-semibold text-white py-2 rounded-lg hover:bg-blue-300 transition">
+            <button className="  w-full bg-[#068aa1] font-semibold text-white py-2 rounded-lg hover:bg-blue-300 transition">
               Book Now
             </button>
           </NavLink>

@@ -10,47 +10,55 @@ import PigeonMapsDetails from "../PigeonMapsDetails/PigeonMapsDetails";
 import ReviewShow from "../ReviewShow/ReviewShow";
 import HomePageModal from "../HomePageModal/HomePageModal";
 import { Helmet } from "react-helmet";
+import { ThemeProvider } from "../../contexts/ThemeContext";
+import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
 
 const Home = () => {
   const hotelsInfo = useLoaderData();
   // console.log(hotelsInfo);
   return (
-    <div className="max-w-screen-2xl mx-auto md:px-16 py-1">
-      <Helmet>
-        <title>HomePage</title>
-      </Helmet>
-      <div className="mt-10 mb-10">
-        <SwiperSlider></SwiperSlider>
-      </div>
-      <div className="mt-10 mb-10">
-        <TypewriterText></TypewriterText>
-      </div>
-      <div className="mt-10 mb-10">
-        <ContactPageMap></ContactPageMap>
-      </div>
-      <div className="mt-10 mb-10">
-        <PigeonMapsDetails></PigeonMapsDetails>
-      </div>
-      <div className="mt-10 mb-10">
-        <HomePageModal></HomePageModal>
+    <ThemeProvider>
+      <div>
+        <ThemeSwitch></ThemeSwitch>
       </div>
 
-      <div>
-        <HotelsCollection
-          key={hotelsInfo._id}
-          hotelsInfo={hotelsInfo}
-        ></HotelsCollection>
+      <div className="max-w-screen-2xl mx-auto md:px-16 py-1 dark:bg-gray-900 dark:text-blue-600">
+        <Helmet>
+          <title>HomePage</title>
+        </Helmet>
+        <div className="mt-10 mb-10">
+          <SwiperSlider></SwiperSlider>
+        </div>
+        <div className="mt-10 mb-10">
+          <TypewriterText></TypewriterText>
+        </div>
+        <div className="mt-10 mb-10">
+          <ContactPageMap></ContactPageMap>
+        </div>
+        <div className="mt-10 mb-10">
+          <PigeonMapsDetails></PigeonMapsDetails>
+        </div>
+        <div className="mt-10 mb-10">
+          <HomePageModal></HomePageModal>
+        </div>
+
+        <div>
+          <HotelsCollection
+            key={hotelsInfo._id}
+            hotelsInfo={hotelsInfo}
+          ></HotelsCollection>
+        </div>
+        <div className="mt-10 mb-10">
+          <ReviewShow></ReviewShow>
+        </div>
+        <div className="mt-10 mb-10">
+          <LottieCard></LottieCard>
+        </div>
+        <div className="mt-10 mb-10">
+          <HotelService></HotelService>
+        </div>
       </div>
-      <div className="mt-10 mb-10">
-        <ReviewShow></ReviewShow>
-      </div>
-      <div className="mt-10 mb-10">
-        <LottieCard></LottieCard>
-      </div>
-      <div className="mt-10 mb-10">
-        <HotelService></HotelService>
-      </div>
-    </div>
+    </ThemeProvider>
   );
 };
 

@@ -131,7 +131,7 @@ const TermsConditions = () => {
         </div>
 
         <footer className="mt-10 text-center text-sm text-gray-500">
-          &copy; 2025 PrimeLodgeBookify. All rights reserved.
+          &copy; 2025 <strong>PrimeLodgeBookify</strong>. All rights reserved.
         </footer>
       </div>
     </div>

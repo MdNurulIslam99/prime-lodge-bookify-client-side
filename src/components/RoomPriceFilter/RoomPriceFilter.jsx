@@ -3,21 +3,19 @@ import RoomPageCard from "./RoomPageCard";
 import axios from "axios";
 
 const RoomPriceFilter = () => {
-  // Filter state for min and max price
   const [filters, setFilters] = useState({ minPrice: "", maxPrice: "" });
   const [rooms, setRooms] = useState([]);
 
-  // Fetch rooms with filters applied (no try-catch)
   const fetchRooms = async () => {
     axios
-      .get("http://localhost:3000/hotels", {
+      .get("https://primelodge-bookify.vercel.app/hotels", {
         params: {
           minPrice: filters.minPrice,
           maxPrice: filters.maxPrice,
         },
       })
       .then((res) => setRooms(res.data))
-      .catch((err) => console.error(err)); // optional error handling
+      .catch((err) => console.error(err));
   };
 
   useEffect(() => {
@@ -25,6 +23,7 @@ const RoomPriceFilter = () => {
   }, []);
 
   const handleChange = (e) => {
+    e.preventDefault();
     setFilters((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
@@ -53,8 +52,12 @@ const RoomPriceFilter = () => {
           onChange={handleChange}
           className="input input-bordered"
         />
-        <button type="submit" className="btn btn-primary">
-          Filter
+
+        <button
+          type="submit"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
+        >
+          Apply Filter Price
         </button>
       </form>
 

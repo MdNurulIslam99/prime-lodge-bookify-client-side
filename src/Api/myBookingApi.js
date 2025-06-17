@@ -1,5 +1,5 @@
 export const myBookingPromise = (email) => {
-  return fetch(`http://localhost:3000/hotelsBooking?email=${email}`).then(
-    (res) => res.json()
-  );
+  return fetch(
+    `https://primelodge-bookify.vercel.app/hotelsBooking?email=${email}`
+  ).then((res) => res.json());
 };
