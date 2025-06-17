@@ -9,7 +9,7 @@ import useBookingApi from "../../Api/useBookingApi";
 const MyBookings = () => {
   const { user } = use(AuthContext);
   const { myBookingPromise } = useBookingApi();
-  console.log("token in the context ", user.accessToken);
+  // console.log("token in the context ", user.accessToken);
   return (
     <div>
       <Helmet>
