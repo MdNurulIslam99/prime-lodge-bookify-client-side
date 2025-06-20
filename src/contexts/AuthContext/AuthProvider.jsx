@@ -34,6 +34,7 @@ const AuthProvider = ({ children }) => {
 
   const signOutUser = () => {
     setLoading(true);
+    // window.location.reload();
     return signOut(auth);
   };
 

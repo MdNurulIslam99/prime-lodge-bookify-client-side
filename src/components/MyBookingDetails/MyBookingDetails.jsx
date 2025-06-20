@@ -2,8 +2,8 @@ import React, { use, useState } from "react";
 import MyBookingsRow from "../MyBookingsRow/MyBookingsRow";
 import { Helmet } from "react-helmet";
 
-const MyBookingDetails = ({ myBookingPromise }) => {
-  const initialData = use(myBookingPromise); // initial data from suspense
+const MyBookingDetails = ({ initialData }) => {
+  // const initialData = use(myBookingPromise); // initial data from suspense
   const [myBookings, setMyBookings] = useState(initialData); //  NEW state
 
   const handleCancelSuccess = (deletedId) => {
@@ -32,7 +32,7 @@ const MyBookingDetails = ({ myBookingPromise }) => {
             </tr>
           </thead>
           <tbody>
-            {myBookings.map((myBooking, index) => (
+            {initialData.map((myBooking, index) => (
               <MyBookingsRow
                 index={index}
                 key={myBooking._id}
