@@ -132,6 +132,6 @@ A modern, full-featured **hotel room booking & roommate finding platform** built
 
 🔴 Live Site: https://modern-hotel-bookings.web.app/
 
-🟡 Client Repository: https://github.com/MdNurulIslam99/prime-lodge-bookify-client-side.git
+🟡 Client Repository: https://github.com/MdNurulIslam99/prime-lodge-bookify-client-side
 
-🔵 Server Repository: https://github.com/MdNurulIslam99/prime-lodge-bookify-server-si
+🔵 Server Repository: https://github.com/MdNurulIslam99/prime-lodge-bookify-server-side
