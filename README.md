@@ -1,12 +1,25 @@
 # 🏨 PrimeLodgeBookify
 
-A modern, full-featured **hotel room booking & roommate finding platform** built with **React, Firebase, Node.js, and Express**. The platform enables users to **explore listings**, **book or cancel rooms**, **connect with potential roommates**, and manage shared living easily — all through a fast, responsive, and secure interface.
+PrimeLodgeBookify is a full-featured hotel booking platform designed to provide a seamless and user-friendly experience for travelers and hotel owners alike. Built using the MERN Stack (MongoDB, Express.js, React.js, Node.js), this project showcases modern UI/UX design principles, secure authentication, dynamic room filtering, and interactive features to streamline the hotel reservation process.
 
 📍 **Live Site**: [PrimeLodgeBookify Live Link](https://modern-hotel-bookings.web.app/)
 
 ---
 
 ## 🚀 Main Features
+
+## 🔑 Key Features:
+User Authentication: Secure login and registration using Firebase Auth.
+
+Room Listing & Filtering: Search, filter, and view available rooms by type (e.g., Single, Double, Suite) with real-time availability.
+
+Interactive Map Integration: View hotel locations using Leaflet.js with markers and popups for enhanced user navigation.
+
+Admin Dashboard: Hotel admins can add, edit, or delete room listings and manage bookings.
+
+Booking System: Users can check room details and book rooms with confirmation tracking.
+
+Responsive Design: Fully optimized for desktop and mobile using Tailwind CSS and DaisyUI.
 
 ### 🔍 Explore Listings
 
@@ -33,7 +46,8 @@ A modern, full-featured **hotel room booking & roommate finding platform** built
   - Listings
   - Favorites
   - Bookings
-  - Messages
+  - Canceling
+  - Booking Date update
 
 ### 🎨 Rich UI/UX
 
@@ -61,11 +75,14 @@ A modern, full-featured **hotel room booking & roommate finding platform** built
 - `Firebase Authentication`
 - `Firebase Firestore` / `Realtime Database`
 
-### 🧰 Backend & Auth
+### 🌟 What Makes It Stand Out:
+Clean, responsive, and modern UI
 
-- `Node.js` + `Express.js` REST API
-- `Firebase Authentication`
-- `Firebase Firestore` / `Realtime Database`
+Full CRUD functionality for hotel management
+
+Networking integration knowledge in design considerations
+
+A scalable structure suitable for future feature enhancements like payment integration or customer reviews
 
 ---
 
