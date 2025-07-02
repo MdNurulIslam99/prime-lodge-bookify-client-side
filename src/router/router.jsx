@@ -34,7 +34,7 @@ const router = createBrowserRouter([
             <span className="loading loading-bars loading-xl"></span>
           </p>
         ),
-        loader: () => fetch("http://localhost:3000/hotels"),
+        loader: () => fetch("https://primelodge-bookify.vercel.app/hotels"),
         errorElement: <ErrorMassage></ErrorMassage>,
       },
       {
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
         //     <span className="loading loading-bars loading-xl"></span>
         //   </p>
         // ),
-        // loader: () => fetch("http://localhost:3000/hotels"),
+        // loader: () => fetch("https://primelodge-bookify.vercel.app/hotels"),
       },
       {
         path: "/allRoom",
@@ -75,7 +75,7 @@ const router = createBrowserRouter([
           </p>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/hotels/${params.id}`),
+          fetch(`https://primelodge-bookify.vercel.app/hotels/${params.id}`),
         errorElement: <ErrorMassage></ErrorMassage>,
       },
       {

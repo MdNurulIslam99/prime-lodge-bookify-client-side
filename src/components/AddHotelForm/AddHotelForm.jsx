@@ -50,7 +50,7 @@ const AddHotelForm = () => {
     };
 
     axios
-      .post("http://localhost:3000/hotels", payload)
+      .post("https://primelodge-bookify.vercel.app/hotels", payload)
       .then((res) => {
         if (res.status === 200 || res.status === 201) {
           Swal.fire({

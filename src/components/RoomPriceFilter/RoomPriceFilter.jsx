@@ -8,7 +8,7 @@ const RoomPriceFilter = () => {
 
   const fetchRooms = async () => {
     axios
-      .get("http://localhost:3000/hotels", {
+      .get("https://primelodge-bookify.vercel.app/hotels", {
         params: {
           minPrice: filters.minPrice,
           maxPrice: filters.maxPrice,
