@@ -8,7 +8,7 @@ const HotelsCollection = ({ hotelsInfo }) => {
     .sort((a, b) => b.pricePerNight - a.pricePerNight)
     .slice(0, 8);
   return (
-    <div className="py-12 ">
+    <div className="py-12 -mt-10 ">
       <div>
         <HotelsContainer></HotelsContainer>
       </div>

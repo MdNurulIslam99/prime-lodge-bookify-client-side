@@ -36,20 +36,20 @@ const Home = () => {
         <div className="mt-10 mb-10">
           <ContactPageMap></ContactPageMap>
         </div>
-        <div className="mt-10 mb-10">
+        <div className="mt-10 ">
           <PigeonMapsDetails></PigeonMapsDetails>
         </div>
         <div className="mt-10 mb-10">
           <HomePageModal></HomePageModal>
         </div>
 
-        <div className="mt-10 mb-10">
+        <div className="mt-10 ">
           <HotelsCollection
             key={hotelsInfo._id}
             hotelsInfo={hotelsInfo}
           ></HotelsCollection>
         </div>
-        <div className="mt-10 mb-10">
+        <div className=" mb-10">
           <ReviewShow></ReviewShow>
         </div>
         <div className="mt-10 mb-10">

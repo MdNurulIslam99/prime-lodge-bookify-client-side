@@ -10,32 +10,33 @@ const HotelLocationMap = () => {
 
   //  Define a custom divIcon with emoji
   const hotelDivIcon = L.divIcon({
-    className: "custom-marker", // Optional: You can style with CSS
-    html: `<div style="font-size: 24px;">🏨</div>`, //  Custom icon
+    className: "custom-marker",
+    html: `<div style="font-size: 24px;">🏨</div>`,
     iconSize: [30, 30],
     iconAnchor: [15, 30],
     popupAnchor: [0, -30],
   });
 
   return (
-    <div className="w-full h-[400px] rounded-xl overflow-hidden shadow-lg border">
+    //  Added relative and z-[0] to prevent overlapping navbar
+    <div className="w-full h-[400px] rounded-xl overflow-hidden shadow-lg border relative z-0">
       <MapContainer
         center={centerPosition}
         zoom={6}
         scrollWheelZoom={true}
-        className="h-full w-full"
+        className="h-full w-full z-0" //  Explicitly set lower z-index
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
         />
 
-        {/*  Use custom marker icon here */}
+        {/*  Use custom marker icon */}
         {hotelsLocation.map((hotel, index) => (
           <Marker
             key={index}
             position={[hotel.coordinates[1], hotel.coordinates[0]]}
-            icon={hotelDivIcon} //  Apply custom icon
+            icon={hotelDivIcon}
           >
             <Popup>
               <div>
