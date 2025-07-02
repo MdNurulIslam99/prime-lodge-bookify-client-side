@@ -2,7 +2,7 @@ import React from "react";
 
 const MyBookingPageTitle = () => {
   return (
-    <div className="mb-10 mt-5 bg-base-200 shadow-2xl rounded-2xl p-6 space-y-3">
+    <div className="mb-10  bg-base-200 shadow-2xl rounded-2xl p-10 border space-y-3">
       <h1 className="text-4xl font-extrabold text-center">
         Explore MyBooking Hotel Reservations Dashboard
       </h1>

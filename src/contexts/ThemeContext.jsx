@@ -62,7 +62,7 @@ export function ThemeProvider({ children }) {
   };
 
   return (
-    // Only apply the theme class if theme is not empty
+    // Only apply the theme className if theme is not empty
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <div className={theme ? theme : "light"}>{children}</div>
     </ThemeContext.Provider>

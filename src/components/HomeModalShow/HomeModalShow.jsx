@@ -7,8 +7,8 @@ const HomeModalShow = ({ offers }) => {
   }, []);
 
   return (
-    <dialog id="my_modal_3" className="modal">
-      <div className="modal-box max-w-2xl">
+    <dialog id="my_modal_3" className="modal ">
+      <div className="modal-box max-w-2xl mt-12">
         <form method="dialog">
           {/* ✕ Close button */}
           <button className="btn btn-md bg-emerald-400 btn-circle btn-ghost absolute right-2 top-3">

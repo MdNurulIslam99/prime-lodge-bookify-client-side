@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { NavLink, useLoaderData, useNavigate } from "react-router";
 import RoomPageDetailsTitle from "../RoomPageDetailsTitle/RoomPageDetailsTitle";
@@ -40,6 +40,10 @@ const RoomDetailsPage = () => {
     detailsData?.roomStatus
   ); // State for live roomStatus
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   const handleConfirmBooking = async () => {
     const bookingHotelData = {
       roomId: _id,
@@ -56,10 +60,7 @@ const RoomDetailsPage = () => {
 
     // Save booking date info to database
     axios
-      .post(
-        "https://primelodge-bookify.vercel.app/hotelsBooking",
-        bookingHotelData
-      )
+      .post("http://localhost:3000/hotelsBooking", bookingHotelData)
       .then((res) => {
         if (res.data.insertedId) {
           Swal.fire({
@@ -82,10 +83,7 @@ const RoomDetailsPage = () => {
     };
     // Update booking roomStatus info to database
     axios
-      .patch(
-        `https://primelodge-bookify.vercel.app/hotels/roomDetailsPage/${_id}`,
-        roomStatus
-      )
+      .patch(`http://localhost:3000/hotels/roomDetailsPage/${_id}`, roomStatus)
       .then((res) => {
         if (res.data.modifiedCount > 0) {
           setRoomStatusState("unavailable"); // Update ui after db update
@@ -104,7 +102,7 @@ const RoomDetailsPage = () => {
       <Helmet>
         <title>RoomDetails</title>
       </Helmet>
-      <div className="max-w-6xl mx-auto  mb-10">
+      <div className="max-w-6xl mx-auto   mb-10">
         <RoomPageDetailsTitle />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-5 bg-base-200 mt-5 shadow-2xl rounded-2xl">
           <img

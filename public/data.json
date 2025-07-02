@@ -1,0 +1,792 @@
+[
+  {
+    "name": "The Grand Sultan Tea Resort & Golf",
+    "location": "Sreemangal",
+    "city": "Sylhet",
+    "coordinates": [91.7329, 24.3083],
+    "address": "Sreemangal-Kamalganj Road, Sreemangal 3210",
+    "rating": 4.7,
+    "pricePerNight": 12000,
+    "currency": "BDT",
+    "checkIn": "2:00 PM",
+    "checkOut": "12:00 PM",
+    "description": "Nestled amidst lush tea gardens, this luxury resort offers a tranquil escape with world-class golfing facilities. Enjoy breathtaking views of the rolling hills while indulging in their premium spa services. The resort combines modern luxury with the natural beauty of Sylhet's tea country.",
+    "amenities": [
+      "Golf Course",
+      "Spa",
+      "Swimming Pool",
+      "Restaurant",
+      "Free WiFi"
+    ],
+    "imageUrl": "https://i.ibb.co/N6Rs8fqZ/hotel-1.jpg",
+    "hotelRoomImageUrl": "https://i.ibb.co/WNgkmtFQ/room-1.jpg",
+    "roomStatus": "unavailable",
+    "roomTypes": ["Deluxe", "Suite", "Villa"],
+    "maxGuests": 4,
+    "bedType": "King",
+    "reviews": [
+      {
+        "username": "hablu",
+        "email": "hablu@paglu.com",
+        "rating": 5,
+        "comment": "good service",
+        "timestamp": "2025-06-16T06:25:54.333Z"
+      },
+      {
+        "user": "FamilyTravels",
+        "rating": 5,
+        "comment": "Perfect family getaway. Kids loved the pool and we enjoyed the peaceful surroundings.",
+        "timestamp": "2023-06-10T10:15:00Z"
+      },
+      {
+        "user": "TravelEnthusiast",
+        "rating": 5,
+        "comment": "Absolutely stunning location with impeccable service. The tea garden views are breathtaking!",
+        "timestamp": "2023-05-15T08:30:00Z"
+      },
+      {
+        "user": "GolfLover22",
+        "rating": 4,
+        "comment": "Fantastic golf course, though the greens could be better maintained. Spa was exceptional.",
+        "timestamp": "2023-04-22T14:45:00Z"
+      }
+    ]
+  },
+  {
+    "name": "Royal Tulip Sea Pearl Resort",
+    "location": "Marine Drive",
+    "city": "Cox's Bazar",
+    "coordinates": [91.9788, 21.4272],
+    "address": "Marine Drive, Kolatoli, Cox's Bazar 4700",
+    "rating": 4.8,
+    "pricePerNight": 18000,
+    "currency": "BDT",
+    "checkIn": "3:00 PM",
+    "checkOut": "11:00 AM",
+    "description": "This luxurious beachfront property offers direct access to the world's longest natural sandy beach. Featuring stunning infinity pools overlooking the Bay of Bengal and a world-class spa, it's the perfect blend of comfort and natural beauty. The resort's architecture blends contemporary design with local cultural elements.",
+    "amenities": [
+      "Private Beach",
+      "Infinity Pool",
+      "Spa",
+      "Water Sports",
+      "Kids Club"
+    ],
+    "imageUrl": "https://i.ibb.co/G4vtgYY9/hotel-2.jpg",
+    "hotelRoomImageUrl": "https://i.ibb.co/sdTZJWfS/room-2.jpg",
+    "roomStatus": "available",
+    "roomTypes": ["Sea View", "Beachfront Villa", "Presidential"],
+    "maxGuests": 5,
+    "bedType": "King",
+    "reviews": [
+      {
+        "user": "HoneymoonCouple",
+        "rating": 5,
+        "comment": "Perfect romantic getaway. The beachfront villa was amazing with private beach access.",
+        "timestamp": "2023-08-05T09:10:00Z"
+      },
+      {
+        "user": "TravelWithKids",
+        "rating": 4,
+        "comment": "Great facilities for children. Kids club kept them entertained while we relaxed.",
+        "timestamp": "2023-07-30T11:45:00Z"
+      },
+      {
+        "user": "BeachLover99",
+        "rating": 5,
+        "comment": "The infinity pools with ocean views are worth every penny! Best resort in Cox's Bazar.",
+        "timestamp": "2023-07-18T16:20:00Z"
+      }
+    ]
+  },
+  {
+    "name": "InterContinental Dhaka",
+    "location": "Gulshan",
+    "city": "Dhaka",
+    "coordinates": [90.4135, 23.8103],
+    "address": "1 Minto Road, Dhaka 1000",
+    "rating": 4.9,
+    "pricePerNight": 25000,
+    "currency": "BDT",
+    "checkIn": "2:00 PM",
+    "checkOut": "12:00 PM",
+    "description": "As Dhaka's premier luxury hotel, the InterContinental offers unparalleled service and sophistication in the heart of the city. The rooftop pool provides stunning city views, while the multiple dining options showcase both local and international cuisine. Its central location makes it ideal for both business and leisure travelers.",
+    "amenities": [
+      "Rooftop Pool",
+      "Spa",
+      "Business Center",
+      "Multiple Restaurants",
+      "Free WiFi"
+    ],
+    "imageUrl": "https://i.ibb.co/HLWNnfRt/hotel-3.jpg",
+    "hotelRoomImageUrl": "https://i.ibb.co/pry4G42t/room-3.jpg",
+    "roomStatus": "available",
+    "roomTypes": ["Deluxe", "Executive", "Presidential Suite"],
+    "maxGuests": 4,
+    "bedType": "King",
+    "reviews": [
+      {
+        "username": "hablu",
+        "email": "hablu@paglu.com",
+        "rating": 5,
+        "comment": "I am satisfied for service. ",
+        "timestamp": "2025-06-18T16:19:45.555Z"
+      },
+      {
+        "username": "hablu",
+        "email": "hablu@paglu.com",
+        "rating": 5,
+        "comment": "service was so good",
+        "timestamp": "2025-06-16T15:34:44.868Z"
+      },
+      {
+        "user": "FoodieExplorer",
+        "rating": 5,
+        "comment": "The breakfast buffet is the best in the city with so many international options.",
+        "timestamp": "2023-05-20T07:15:00Z"
+      },
+      {
+        "user": "LuxurySeeker",
+        "rating": 5,
+        "comment": "Nothing compares to the InterContinental in Dhaka. The presidential suite is divine.",
+        "timestamp": "2023-04-28T18:40:00Z"
+      },
+      {
+        "user": "BusinessTraveler",
+        "rating": 5,
+        "comment": "Exceptional service and perfect location for business meetings. The executive lounge is superb.",
+        "timestamp": "2023-03-12T13:25:00Z"
+      }
+    ]
+  },
+  {
+    "name": "The Peninsula Chittagong",
+    "location": "Agrabad",
+    "city": "Chittagong",
+    "coordinates": [91.8258, 22.3419],
+    "address": "486/B, O.R. Nizam Road, Chittagong 4100",
+    "rating": 4.5,
+    "pricePerNight": 15000,
+    "currency": "BDT",
+    "checkIn": "3:00 PM",
+    "checkOut": "11:00 AM",
+    "description": "This modern business hotel offers spectacular views of the Karnaphuli River and Chittagong port. The rooftop restaurant serves exquisite local seafood with panoramic vistas. Conveniently located in the commercial district, it provides easy access to business centers while offering luxurious comfort.",
+    "amenities": [
+      "Rooftop Restaurant",
+      "Fitness Center",
+      "Meeting Rooms",
+      "Free WiFi"
+    ],
+    "imageUrl": "https://i.ibb.co/CsSJqcpQ/hotel-4.jpg",
+    "hotelRoomImageUrl": "https://i.ibb.co/fYCBQxNR/room-4.jpg",
+    "roomStatus": "unavailable",
+    "roomTypes": ["Standard", "Executive", "River View Suite"],
+    "maxGuests": 3,
+    "bedType": "Queen",
+    "reviews": []
+  },
+  {
+    "name": "Hotel Sea Crown",
+    "location": "Kolatali",
+    "city": "Cox's Bazar",
+    "coordinates": [91.9753, 21.4342],
+    "address": "Marine Drive Road, Kolatali, Cox's Bazar 4700",
+    "rating": 4.3,
+    "pricePerNight": 9000,
+    "currency": "BDT",
+    "checkIn": "2:00 PM",
+    "checkOut": "12:00 PM",
+    "description": "Located directly on the world's longest beach, Sea Crown offers comfortable accommodations with stunning ocean views. The property features a large swimming pool and multiple dining options serving fresh seafood. Its prime location provides easy access to Cox's Bazar's main attractions.",
+    "amenities": [
+      "Beach Access",
+      "Swimming Pool",
+      "Restaurant",
+      "Conference Facilities"
+    ],
+    "imageUrl": "https://i.ibb.co/C3mPXJ6n/hotel-5.jpg",
+    "hotelRoomImageUrl": "https://i.ibb.co/Y7DxSG4X/room-5.jpg",
+    "roomStatus": "unavailable",
+    "roomTypes": ["Standard", "Sea View", "Family Room"],
+    "maxGuests": 4,
+    "bedType": "Double",
+    "reviews": [
+      {
+        "user": "WeekendGetaway",
+        "rating": 3,
+        "comment": "Good location but rooms could use some updating. Service was excellent though.",
+        "timestamp": "2023-08-10T14:20:00Z"
+      },
+      {
+        "user": "FamilyOfFour",
+        "rating": 4,
+        "comment": "Perfect for families. Kids loved the pool and we loved the seafood restaurant.",
+        "timestamp": "2023-07-15T09:45:00Z"
+      },
+      {
+        "user": "BudgetTraveler",
+        "rating": 4,
+        "comment": "Great value for money with direct beach access. Rooms are clean and comfortable.",
+        "timestamp": "2023-06-22T12:30:00Z"
+      }
+    ]
+  },
+  {
+    "name": "Radisson Blu Water Garden",
+    "location": "Airport Road",
+    "city": "Dhaka",
+    "coordinates": [90.3976, 23.8434],
+    "address": "Airport Road, Dhaka 1229",
+    "rating": 4.7,
+    "pricePerNight": 22000,
+    "currency": "BDT",
+    "checkIn": "3:00 PM",
+    "checkOut": "11:00 AM",
+    "description": "Set amidst beautifully landscaped water gardens, this luxury hotel offers a serene escape near the airport. The property features an expansive pool area, a full-service spa, and multiple dining options. Its convenient location makes it ideal for both business travelers and transit passengers.",
+    "amenities": [
+      "Swimming Pool",
+      "Spa",
+      "Fitness Center",
+      "Multiple Dining Options",
+      "Free WiFi"
+    ],
+    "imageUrl": "https://i.ibb.co/twZ155Q2/hotel-6.jpg",
+    "hotelRoomImageUrl": "https://i.ibb.co/b5s31Ffz/room-6.jpg",
+    "roomStatus": "unavailable",
+    "roomTypes": ["Superior", "Business Class", "Executive Suite"],
+    "maxGuests": 4,
+    "bedType": "King",
+    "reviews": [
+      {
+        "user": "AnniversaryCouple",
+        "rating": 5,
+        "comment": "Beautiful gardens and romantic atmosphere. The executive suite was spacious and luxurious.",
+        "timestamp": "2023-04-14T19:00:00Z"
+      },
+      {
+        "user": "BusinessGuest",
+        "rating": 5,
+        "comment": "Excellent business facilities and very professional staff. Pool area is a great place to unwind.",
+        "timestamp": "2023-03-25T15:30:00Z"
+      },
+      {
+        "user": "TransitPassenger",
+        "rating": 5,
+        "comment": "Perfect for overnight layovers. The spa treatment after a long flight was heavenly.",
+        "timestamp": "2023-02-18T22:15:00Z"
+      }
+    ]
+  },
+  {
+    "name": "Nijhum Resort",
+    "location": "Jaflong",
+    "city": "Sylhet",
+    "coordinates": [92.1096, 25.1659],
+    "address": "Jaflong Road, Sylhet",
+    "rating": 4.2,
+    "pricePerNight": 8000,
+    "currency": "BDT",
+    "checkIn": "2:00 PM",
+    "checkOut": "12:00 PM",
+    "description": "Surrounded by the natural beauty of Jaflong's tea gardens and rivers, this resort offers a peaceful retreat. The property features traditional architecture with modern comforts, offering stunning views of the surrounding hills. It's an ideal base for exploring Sylhet's natural wonders.",
+    "amenities": ["River View", "Garden", "Restaurant", "Children's Play Area"],
+    "imageUrl": "https://i.ibb.co/C3xTTywg/hotel-7.jpg",
+    "hotelRoomImageUrl": "https://i.ibb.co/bgfp81fS/room-7.jpg",
+    "roomStatus": "unavailable",
+    "roomTypes": ["Standard", "Cottage", "Family Room"],
+    "maxGuests": 5,
+    "bedType": "Queen",
+    "reviews": []
+  },
+  {
+    "name": "Agrabad Hotel",
+    "location": "Agrabad CDA",
+    "city": "Chittagong",
+    "coordinates": [91.825, 22.3364],
+    "address": "Sabdar Ali Road, Agrabad, Chittagong",
+    "rating": 4,
+    "pricePerNight": 7000,
+    "currency": "BDT",
+    "checkIn": "3:00 PM",
+    "checkOut": "11:00 AM",
+    "description": "A reliable business hotel in Chittagong's commercial heart, offering comfortable accommodations with modern amenities. The hotel's central location provides easy access to the port area and business districts. Guests can enjoy local and international cuisine at the on-site restaurant.",
+    "amenities": ["Restaurant", "Conference Hall", "Free WiFi", "Room Service"],
+    "imageUrl": "https://i.ibb.co/DPXQfCLv/hotel-8.jpg",
+    "hotelRoomImageUrl": "https://i.ibb.co/rRwGcdbW/room-8.jpg",
+    "roomStatus": "unavailable",
+    "roomTypes": ["Standard", "Deluxe", "Executive"],
+    "maxGuests": 3,
+    "bedType": "Double",
+    "reviews": [
+      {
+        "user": "ConferenceAttendee",
+        "rating": 4,
+        "comment": "Conference facilities were well-equipped and staff was very helpful.",
+        "timestamp": "2023-07-20T16:30:00Z"
+      },
+      {
+        "user": "SoloExplorer",
+        "rating": 3,
+        "comment": "Good value for money but the WiFi was spotty. Restaurant food was excellent.",
+        "timestamp": "2023-06-12T13:45:00Z"
+      },
+      {
+        "user": "BusinessTravelerCT",
+        "rating": 4,
+        "comment": "Convenient location for port business. Rooms are clean and functional.",
+        "timestamp": "2023-05-08T10:20:00Z"
+      }
+    ]
+  },
+  {
+    "name": "Long Beach Hotel",
+    "location": "Inani Beach",
+    "city": "Cox's Bazar",
+    "coordinates": [92.0147, 21.3917],
+    "address": "Inani Beach Road, Cox's Bazar",
+    "rating": 4.4,
+    "pricePerNight": 11000,
+    "currency": "BDT",
+    "checkIn": "2:00 PM",
+    "checkOut": "12:00 PM",
+    "description": "Situated on the quieter Inani Beach, this property offers a more secluded beach experience away from the crowds. The hotel features lush gardens leading to pristine sandy beaches. It's perfect for travelers seeking peace and natural beauty with comfortable amenities.",
+    "amenities": ["Private Beach", "Swimming Pool", "Restaurant", "Garden"],
+    "imageUrl": "https://i.ibb.co/BHnkRtBn/hotel-12.jpg",
+    "hotelRoomImageUrl": "https://i.ibb.co/Ld549DnK/room-9.jpg",
+    "roomStatus": "unavailable",
+    "roomTypes": ["Beach View", "Suite", "Family Room"],
+    "maxGuests": 4,
+    "bedType": "Queen",
+    "reviews": []
+  },
+  {
+    "name": "Westin Dhaka",
+    "location": "Gulshan Avenue",
+    "city": "Dhaka",
+    "coordinates": [90.4164, 23.7949],
+    "address": "Gulshan Avenue, Dhaka 1212",
+    "rating": 4.8,
+    "pricePerNight": 28000,
+    "currency": "BDT",
+    "checkIn": "3:00 PM",
+    "checkOut": "11:00 AM",
+    "description": "Dhaka's ultimate luxury destination, featuring the famous Heavenly Bed and world-class service. The hotel's infinity pool offers stunning city views, while the spa provides rejuvenating treatments. Located in the diplomatic zone, it's popular with business and leisure travelers alike.",
+    "amenities": [
+      "Infinity Pool",
+      "Heavenly Spa",
+      "Multiple Fine Dining",
+      "Executive Lounge"
+    ],
+    "imageUrl": "https://i.ibb.co/gM0VM8nC/hotel-10.jpg",
+    "hotelRoomImageUrl": "https://i.ibb.co/QvrDkL13/room-10.jpg",
+    "roomStatus": "available",
+    "roomTypes": ["Deluxe", "Executive", "Presidential Suite"],
+    "maxGuests": 4,
+    "bedType": "Heavenly King",
+    "reviews": [
+      {
+        "user": "AnniversaryCelebration",
+        "rating": 5,
+        "comment": "Celebrated our anniversary here. The staff went above and beyond to make it special.",
+        "timestamp": "2023-03-22T20:45:00Z"
+      },
+      {
+        "user": "BusinessElite",
+        "rating": 5,
+        "comment": "Executive lounge is worth every penny. Perfect for high-level business meetings.",
+        "timestamp": "2023-02-28T14:10:00Z"
+      },
+      {
+        "user": "LuxuryTraveler",
+        "rating": 5,
+        "comment": "The Heavenly Bed lives up to its name - best sleep I've had in years! Service is impeccable.",
+        "timestamp": "2023-01-15T17:25:00Z"
+      }
+    ]
+  },
+  {
+    "name": "Mystic Mood Resort",
+    "location": "Bisanakandi",
+    "city": "Sylhet",
+    "coordinates": [92.1234, 25.1234],
+    "address": "Bisanakandi Road, Sylhet",
+    "rating": 4.1,
+    "pricePerNight": 7500,
+    "currency": "BDT",
+    "checkIn": "2:00 PM",
+    "checkOut": "12:00 PM",
+    "description": "This nature resort near Bisanakandi offers breathtaking views of layered tea gardens and crystal-clear rivers. The cottages are designed to blend with the natural surroundings while providing modern comforts. Evening bonfires and local cuisine add to the authentic Sylheti experience.",
+    "amenities": ["River View", "Nature Walk", "Local Cuisine", "Bonfire"],
+    "imageUrl": "https://i.ibb.co/Y49z5BQJ/hotel-11.jpg",
+    "hotelRoomImageUrl": "https://i.ibb.co/RnXPr58/room-11.jpg",
+    "roomStatus": "available",
+    "roomTypes": ["Cottage", "Family Room", "Honeymoon Suite"],
+    "maxGuests": 5,
+    "bedType": "Queen",
+    "reviews": [
+      {
+        "user": "FamilyExplorer",
+        "rating": 4,
+        "comment": "Kids loved the nature walks and bonfire. Authentic local food was a highlight.",
+        "timestamp": "2023-08-20T11:20:00Z"
+      },
+      {
+        "user": "CoupleRetreat",
+        "rating": 4,
+        "comment": "Perfect romantic getaway. The honeymoon suite was cozy with amazing views.",
+        "timestamp": "2023-07-12T19:30:00Z"
+      },
+      {
+        "user": "NatureLover",
+        "rating": 5,
+        "comment": "The views are absolutely stunning! Waking up to the river and tea gardens was magical.",
+        "timestamp": "2023-06-05T08:15:00Z"
+      }
+    ]
+  },
+  {
+    "name": "Hotel Bay Grand",
+    "location": "Patenga",
+    "city": "Chittagong",
+    "coordinates": [91.7946, 22.2538],
+    "address": "Patenga Sea Beach Road, Chittagong",
+    "rating": 4.3,
+    "pricePerNight": 9500,
+    "currency": "BDT",
+    "checkIn": "3:00 PM",
+    "checkOut": "11:00 AM",
+    "description": "Located on Patenga Beach with views of the Bay of Bengal, this hotel offers comfortable accommodations with beach access. The property features a large swimming pool and conference facilities. It's an excellent choice for both business meetings and family vacations by the sea.",
+    "amenities": [
+      "Beach Access",
+      "Swimming Pool",
+      "Restaurant",
+      "Conference Facilities"
+    ],
+    "imageUrl": "https://i.ibb.co/jZsqTV0b/hotel-13.jpg",
+    "hotelRoomImageUrl": "https://i.ibb.co/DPkdx30X/room-12.jpg",
+    "roomStatus": "available",
+    "roomTypes": ["Standard", "Sea View", "Executive"],
+    "maxGuests": 4,
+    "bedType": "Double",
+    "reviews": []
+  },
+  {
+    "name": "Dream Palace Resort",
+    "location": "Himchari",
+    "city": "Cox's Bazar",
+    "coordinates": [92.0089, 21.4567],
+    "address": "Himchari Road, Cox's Bazar",
+    "rating": 4,
+    "pricePerNight": 8500,
+    "currency": "BDT",
+    "checkIn": "2:00 PM",
+    "checkOut": "12:00 PM",
+    "description": "Perched on the hills overlooking Himchari National Park, this resort offers panoramic ocean views. The property features landscaped gardens and an infinity pool blending with the horizon. It's an ideal romantic getaway with stunning sunset views over the Bay of Bengal.",
+    "amenities": ["Hill View", "Swimming Pool", "Restaurant", "Garden"],
+    "imageUrl": "https://i.ibb.co/bj0GxfQm/hotel14.jpg",
+    "hotelRoomImageUrl": "https://i.ibb.co/Xr5JfBMF/room-13.jpg",
+    "roomStatus": "available",
+    "roomTypes": ["Standard", "Hillside View", "Family Room"],
+    "maxGuests": 5,
+    "bedType": "Queen",
+    "reviews": [
+      {
+        "user": "WeekendEscaper",
+        "rating": 4,
+        "comment": "Peaceful retreat away from the crowds. Restaurant could improve variety though.",
+        "timestamp": "2023-07-08T13:15:00Z"
+      },
+      {
+        "user": "NaturePhotographer",
+        "rating": 4,
+        "comment": "Great location for photography. Infinity pool blends beautifully with the ocean horizon.",
+        "timestamp": "2023-06-25T06:30:00Z"
+      },
+      {
+        "user": "Honeymooner2023",
+        "rating": 5,
+        "comment": "The sunset views from our hillside room were unforgettable. Perfect romantic spot!",
+        "timestamp": "2023-05-18T17:50:00Z"
+      }
+    ]
+  },
+  {
+    "name": "Rose View Hotel",
+    "location": "Zindabazar",
+    "city": "Sylhet",
+    "coordinates": [91.8665, 24.8944],
+    "address": "Zindabazar, Sylhet 3100",
+    "rating": 4.2,
+    "pricePerNight": 10000,
+    "currency": "BDT",
+    "checkIn": "3:00 PM",
+    "checkOut": "11:00 AM",
+    "description": "Located in Sylhet's commercial center, this hotel offers comfortable accommodations with excellent service. The rooftop restaurant provides city views while serving delicious local cuisine. Its central location makes it convenient for both business and leisure travelers exploring Sylhet.",
+    "amenities": ["Restaurant", "Conference Hall", "Gym", "Free WiFi"],
+    "imageUrl": "https://i.ibb.co/HLZKNqtc/hotel-20.jpg",
+    "hotelRoomImageUrl": "https://i.ibb.co/Z4jPP1X/room-14.jpg",
+    "roomStatus": "available",
+    "roomTypes": ["Standard", "Deluxe", "Executive"],
+    "maxGuests": 3,
+    "bedType": "Double",
+    "reviews": [
+      {
+        "user": "FamilyTrip",
+        "rating": 4,
+        "comment": "Comfortable stay in central location. Easy access to all Sylhet attractions.",
+        "timestamp": "2023-06-30T09:25:00Z"
+      },
+      {
+        "user": "FoodExplorer",
+        "rating": 5,
+        "comment": "Rooftop restaurant has amazing Sylheti cuisine with great city views.",
+        "timestamp": "2023-05-22T12:55:00Z"
+      },
+      {
+        "user": "BusinessVisitor",
+        "rating": 4,
+        "comment": "Perfect location for business in Sylhet. Conference facilities were well-maintained.",
+        "timestamp": "2023-04-10T11:40:00Z"
+      }
+    ]
+  },
+  {
+    "name": "Hotel Supreme",
+    "location": "Dhanmondi",
+    "city": "Dhaka",
+    "coordinates": [90.3709, 23.7465],
+    "address": "Road 12, Dhanmondi, Dhaka 1209",
+    "rating": 4.1,
+    "pricePerNight": 8500,
+    "currency": "BDT",
+    "checkIn": "2:00 PM",
+    "checkOut": "12:00 PM",
+    "description": "A comfortable hotel in Dhaka's popular Dhanmondi area, known for its lakes and cafes. The property offers well-appointed rooms with modern amenities at reasonable rates. Its location provides easy access to Dhaka University and other city attractions.",
+    "amenities": ["Restaurant", "Conference Room", "Free WiFi", "Room Service"],
+    "imageUrl": "https://i.ibb.co/FbwVz7Jc/hotel-15.jpg",
+    "hotelRoomImageUrl": "https://i.ibb.co/FLYXt3Kj/room-15.jpg",
+    "roomStatus": "available",
+    "roomTypes": ["Standard", "Deluxe", "Executive"],
+    "maxGuests": 3,
+    "bedType": "Double",
+    "reviews": []
+  },
+  {
+    "name": "Sayeman Beach Resort",
+    "location": "Kolatali",
+    "city": "Cox's Bazar",
+    "coordinates": [91.9765, 21.4321],
+    "address": "Marine Drive Road, Cox's Bazar",
+    "rating": 4.3,
+    "pricePerNight": 12000,
+    "currency": "BDT",
+    "checkIn": "3:00 PM",
+    "checkOut": "11:00 AM",
+    "description": "One of Cox's Bazar's first beach resorts, offering direct access to the golden sandy beach. The property maintains its classic charm while providing modern amenities. The beachfront restaurant serves fresh seafood with spectacular ocean views.",
+    "amenities": [
+      "Beach Access",
+      "Swimming Pool",
+      "Restaurant",
+      "Conference Hall"
+    ],
+    "imageUrl": "https://i.ibb.co/FkWxzm6f/hotel-17.jpg",
+    "hotelRoomImageUrl": "https://i.ibb.co/wrxcMkhn/room-16.jpg",
+    "roomStatus": "available",
+    "roomTypes": ["Standard", "Sea View", "Suite"],
+    "maxGuests": 4,
+    "bedType": "Queen",
+    "reviews": [
+      {
+        "user": "FamilyVacationer",
+        "rating": 4,
+        "comment": "Great for families. Kids loved the pool and we loved the beachfront location.",
+        "timestamp": "2023-09-01T10:45:00Z"
+      },
+      {
+        "user": "SeafoodLover",
+        "rating": 5,
+        "comment": "The beachfront restaurant serves the freshest seafood in Cox's Bazar!",
+        "timestamp": "2023-08-12T13:10:00Z"
+      },
+      {
+        "user": "HistoryBuff",
+        "rating": 4,
+        "comment": "Loved the classic charm of this historic resort. Beach access is perfect.",
+        "timestamp": "2023-07-05T14:20:00Z"
+      }
+    ]
+  },
+  {
+    "name": "Hotel Golden Tulip",
+    "location": "Gulshan",
+    "city": "Dhaka",
+    "coordinates": [90.4145, 23.7923],
+    "address": "Gulshan 2, Dhaka 1212",
+    "rating": 4.5,
+    "pricePerNight": 18000,
+    "currency": "BDT",
+    "checkIn": "2:00 PM",
+    "checkOut": "12:00 PM",
+    "description": "An upscale hotel in Dhaka's diplomatic and commercial hub of Gulshan. The property features elegant decor, excellent dining options, and comprehensive business facilities. The rooftop pool area offers a refreshing escape from the city bustle below.",
+    "amenities": [
+      "Swimming Pool",
+      "Fitness Center",
+      "Restaurant",
+      "Business Center"
+    ],
+    "imageUrl": "https://i.ibb.co/v6Rn8hdZ/slider-5.jpg",
+    "hotelRoomImageUrl": "https://i.ibb.co/q3KCbnhF/room-17.jpg",
+    "roomStatus": "unavailable",
+    "roomTypes": ["Deluxe", "Executive", "Suite"],
+    "maxGuests": 4,
+    "bedType": "King",
+    "reviews": [
+      {
+        "username": "shovon islam",
+        "email": "shovoneng15@gmail.com",
+        "rating": 5,
+        "comment": "review was good",
+        "timestamp": "2025-06-17T13:25:48.750Z"
+      },
+      {
+        "username": "shovon islam",
+        "email": "shovoneng15@gmail.com",
+        "rating": 5,
+        "comment": "Service was good and net and clean room. I am satisfied.",
+        "timestamp": "2025-06-17T09:51:00.805Z"
+      },
+      {
+        "user": "WeekendRelaxer",
+        "rating": 4,
+        "comment": "Rooftop pool is a great escape from Dhaka's heat and crowds.",
+        "timestamp": "2023-04-22T12:15:00Z"
+      },
+      {
+        "user": "BusinessExecutive",
+        "rating": 5,
+        "comment": "Best business facilities in Dhaka. Executive floor is worth the upgrade.",
+        "timestamp": "2023-03-18T16:50:00Z"
+      },
+      {
+        "user": "DiplomaticStaff",
+        "rating": 5,
+        "comment": "Perfect location in Gulshan with excellent security. Service is always top-notch.",
+        "timestamp": "2023-02-14T15:35:00Z"
+      }
+    ]
+  },
+  {
+    "name": "Pasha Beach Resort",
+    "location": "Inani",
+    "city": "Cox's Bazar",
+    "coordinates": [92.0123, 21.3987],
+    "address": "Inani Beach Road, Cox's Bazar",
+    "rating": 4.2,
+    "pricePerNight": 9500,
+    "currency": "BDT",
+    "checkIn": "2:00 PM",
+    "checkOut": "12:00 PM",
+    "description": "A quiet beachfront property located on the less crowded Inani Beach stretch. The resort features charming cottages surrounded by palm trees just steps from the water. The peaceful atmosphere makes it perfect for romantic getaways or family vacations away from the crowds.",
+    "amenities": [
+      "Beach Access",
+      "Restaurant",
+      "Garden",
+      "Children's Play Area"
+    ],
+    "imageUrl": "https://i.ibb.co/YB3nwsZr/slider-6.jpg",
+    "hotelRoomImageUrl": "https://i.ibb.co/v6sKNJmw/room-18.jpg",
+    "roomStatus": "available",
+    "roomTypes": ["Standard", "Beach View", "Family Room"],
+    "maxGuests": 5,
+    "bedType": "Queen",
+    "reviews": [
+      {
+        "user": "NatureLover",
+        "rating": 4,
+        "comment": "Beautiful palm tree surroundings. Cottages have charming local design.",
+        "timestamp": "2023-08-25T15:10:00Z"
+      },
+      {
+        "user": "FamilyWithKids",
+        "rating": 4,
+        "comment": "Children's play area was great. Beach is clean and less crowded than main areas.",
+        "timestamp": "2023-07-14T11:25:00Z"
+      },
+      {
+        "user": "PeaceSeeker",
+        "rating": 5,
+        "comment": "Finally a quiet beach resort away from the crowds. Perfect for relaxation.",
+        "timestamp": "2023-06-08T09:40:00Z"
+      }
+    ]
+  },
+  {
+    "name": "Royal Hill Resort",
+    "location": "Bandarban",
+    "city": "Chattogram",
+    "coordinates": [92.2846, 22.1953],
+    "address": "Nilgiri Road, Bandarban Hill District, Chattogram",
+    "rating": 4.5,
+    "pricePerNight": 8500,
+    "currency": "BDT",
+    "checkIn": "3:00 PM",
+    "checkOut": "11:00 AM",
+    "description": "Set atop serene hills, Royal Hill Resort offers panoramic views of Bandarban's lush landscapes. A perfect getaway for nature lovers and adventure seekers, featuring hiking trails, local cuisine, and cozy hillside rooms.",
+    "amenities": [
+      "Mountain View",
+      "Hiking Trails",
+      "Restaurant",
+      "Free Parking",
+      "WiFi"
+    ],
+    "imageUrl": "https://i.ibb.co/FpDKWQM/royal.jpg",
+    "hotelRoomImageUrl": "https://i.ibb.co/p7VcSJc/royal-room.jpg",
+    "roomStatus": "available",
+    "roomTypes": ["Single", "Deluxe"],
+    "maxGuests": 2,
+    "bedType": "Queen",
+    "reviews": [
+      {
+        "username": "mim",
+        "email": "mim@example.com",
+        "rating": 4,
+        "comment": "Amazing view and peaceful stay",
+        "timestamp": "2025-06-20T10:12:34.000Z"
+      }
+    ]
+  },
+  {
+    "name": "Ocean Pearl Hotel & Resort",
+    "location": "Cox's Bazar",
+    "city": "Chattogram",
+    "coordinates": [91.9739, 21.4272],
+    "address": "Marine Drive, Kolatoli Beach, Cox's Bazar",
+    "rating": 4.8,
+    "pricePerNight": 14500,
+    "currency": "BDT",
+    "checkIn": "1:00 PM",
+    "checkOut": "11:30 AM",
+    "description": "Located just steps from Kolatoli Beach, Ocean Pearl offers beachfront luxury with modern rooms, infinity pools, and gourmet seafood dining. The perfect escape for families and honeymooners.",
+    "amenities": [
+      "Beach Access",
+      "Infinity Pool",
+      "Sea View Rooms",
+      "Restaurant",
+      "Free WiFi",
+      "Fitness Center"
+    ],
+    "imageUrl": "https://i.ibb.co/STb9rFd/ocean.jpg",
+    "hotelRoomImageUrl": "https://i.ibb.co/kg6YRD3j/ocean-room.jpg",
+    "roomStatus": "available",
+    "roomTypes": ["Suite", "Double", "Penthouse"],
+    "maxGuests": 6,
+    "bedType": "King",
+    "reviews": [
+      {
+        "username": "raihan",
+        "email": "raihan@beachlover.com",
+        "rating": 5,
+        "comment": "Best beach resort experience ever!",
+        "timestamp": "2025-06-18T14:45:20.000Z"
+      }
+    ]
+  }
+]

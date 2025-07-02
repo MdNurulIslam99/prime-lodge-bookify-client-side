@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../../contexts/AuthContext/AuthContext";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -12,6 +12,10 @@ const SignUp = () => {
     use(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -90,7 +94,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="flex justify-center items-center py-10 px-5 md:px-0">
+    <div className="flex justify-center mt-10 items-center py-10 px-5 md:px-0">
       <Helmet>
         <title>signUp</title>
       </Helmet>
@@ -214,10 +218,7 @@ const SignUp = () => {
 
           <p className="text-base text-center">
             Already have an account?
-            <NavLink
-              to="/auth/signin"
-              className="focus:underline hover:underline"
-            >
+            <NavLink to="/signin" className="focus:underline hover:underline">
               <span className="text-blue-400 text-lg font-medium">
                 {" "}
                 Sign In here

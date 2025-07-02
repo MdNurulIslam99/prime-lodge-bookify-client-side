@@ -27,7 +27,7 @@ const MyBookings = () => {
         <title>MyBookings</title>
       </Helmet>
 
-      <div className="mt-5 mb-10">
+      <div className="mt-28 mb-10">
         <MyBookingPageTitle></MyBookingPageTitle>
       </div>
       <Suspense

@@ -8,7 +8,7 @@ import { Link } from "react-router";
 
 const SwiperSlider = () => {
   return (
-    <div className="relative w-full h-[70vh] md:h-[80vh]">
+    <div className="relative w-full h-[60vh] md:h-[70vh]">
       {/* Custom Navigation Arrows */}
       <div className="swiper-Link-prev-custom absolute top-1/2 left-4 z-10 transform -translate-y-1/2 text-white bg-black/50 p-3 rounded-full cursor-pointer">
         <FaChevronLeft className="text-xl" />

@@ -23,11 +23,11 @@ const Home = () => {
         <ThemeSwitch></ThemeSwitch>
       </div> */}
 
-      <div className="max-w-screen-2xl mx-auto md:px-16 py-1 dark:bg-gray-900 dark:text-blue-600">
+      <div className="dark:bg-gray-900 dark:text-blue-600">
         <Helmet>
           <title>HomePage</title>
         </Helmet>
-        <div className="mt-10 mb-10">
+        <div className="mt-16 mb-10">
           <SwiperSlider></SwiperSlider>
         </div>
         <div className="mt-10 mb-10">
@@ -43,7 +43,7 @@ const Home = () => {
           <HomePageModal></HomePageModal>
         </div>
 
-        <div>
+        <div className="mt-10 mb-10">
           <HotelsCollection
             key={hotelsInfo._id}
             hotelsInfo={hotelsInfo}

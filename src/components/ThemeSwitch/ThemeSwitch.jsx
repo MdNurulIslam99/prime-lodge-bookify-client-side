@@ -8,7 +8,7 @@ function ThemeSwitch() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className="absolute top-4 right-32 md:top-3 md:right-2 lg:right-8 cursor-pointer">
+    <div className="">
       <div onClick={toggleTheme}>
         {theme === "light" ? (
           <img src={dayMode} alt="day mode" className="w-8 h-auto" />

@@ -14,6 +14,8 @@ import HotelsDetailsCard from "../components/HotelsDetailsCard/HotelsDetailsCard
 import RoomDetailsPage from "../components/RoomDetailsPage/RoomDetailsPage";
 import PrivateRoute from "../components/routes/PrivateRoute";
 import ErrorMassage from "../components/ErrorMassage/ErrorMassage";
+import AllRoom from "../components/AllRoom/AllRoom";
+import AddHotelForm from "../components/AddHotelForm/AddHotelForm";
 // import HotelCardInfo from "../components/HotelCardInfo/HotelCardInfo";
 
 const router = createBrowserRouter([
@@ -32,7 +34,7 @@ const router = createBrowserRouter([
             <span className="loading loading-bars loading-xl"></span>
           </p>
         ),
-        loader: () => fetch("https://primelodge-bookify.vercel.app/hotels"),
+        loader: () => fetch("http://localhost:3000/hotels"),
         errorElement: <ErrorMassage></ErrorMassage>,
       },
       {
@@ -46,7 +48,21 @@ const router = createBrowserRouter([
         //     <span className="loading loading-bars loading-xl"></span>
         //   </p>
         // ),
-        // loader: () => fetch("https://primelodge-bookify.vercel.app/hotels"),
+        // loader: () => fetch("http://localhost:3000/hotels"),
+      },
+      {
+        path: "/allRoom",
+        element: <AllRoom></AllRoom>,
+        errorElement: <ErrorMassage></ErrorMassage>,
+      },
+      {
+        path: "/addHotelForm",
+        element: (
+          <PrivateRoute>
+            <AddHotelForm></AddHotelForm>
+          </PrivateRoute>
+        ),
+        errorElement: <ErrorMassage></ErrorMassage>,
       },
       {
         path: "/roomDetailsPage/:id",
@@ -59,7 +75,7 @@ const router = createBrowserRouter([
           </p>
         ),
         loader: ({ params }) =>
-          fetch(`https://primelodge-bookify.vercel.app/hotels/${params.id}`),
+          fetch(`http://localhost:3000/hotels/${params.id}`),
         errorElement: <ErrorMassage></ErrorMassage>,
       },
       {
@@ -71,11 +87,11 @@ const router = createBrowserRouter([
         ),
         errorElement: <ErrorMassage></ErrorMassage>,
       },
-      {
-        path: "/hotelsDetailsCard",
-        element: <HotelsDetailsCard></HotelsDetailsCard>,
-        errorElement: <ErrorMassage></ErrorMassage>,
-      },
+      // {
+      //   path: "/hotelsDetailsCard",
+      //   element: <HotelsDetailsCard></HotelsDetailsCard>,
+      //   errorElement: <ErrorMassage></ErrorMassage>,
+      // },
       {
         path: "/termsCondition",
         element: <TermsConditions></TermsConditions>,

@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { use, useEffect } from "react";
 import { NavLink, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../contexts/AuthContext/AuthContext";
 import { toast, ToastContainer } from "react-toastify";
@@ -10,6 +10,10 @@ const SignIn = () => {
   const { signInUser, signInWithGoogle } = use(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   const handleSignIn = (event) => {
     event.preventDefault();
@@ -63,7 +67,7 @@ const SignIn = () => {
       <Helmet>
         <title>signIn</title>
       </Helmet>
-      <div className="flex justify-center items-center py-10 px-5 md:px-0">
+      <div className="flex justify-center mt-10 items-center py-10 px-5 md:px-0">
         <div className="w-full max-w-md p-4 rounded-xl shadow-2xl sm:p-8 bg-black text-white">
           <h2 className="mb-6 mt-3 text-3xl font-semibold text-center">
             Login to your account
@@ -146,10 +150,7 @@ const SignIn = () => {
 
             <p className="text-base text-center">
               Don't have account?
-              <NavLink
-                to="/auth/signup"
-                className="focus:underline hover:underline"
-              >
+              <NavLink to="/signup" className="focus:underline hover:underline">
                 <span className="text-blue-400 text-base font-medium">
                   {" "}
                   Sign up here

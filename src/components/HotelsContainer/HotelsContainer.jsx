@@ -12,8 +12,8 @@ const HotelsContainer = () => {
         elegant urban escapes in Dhaka and tranquil retreats in Sylhet, our
         curated list of top-rated hotels offers something for every traveler.
         Whether you're planning a family vacation, a romantic getaway, or a
-        business trip, you'll find world-class amenities, exceptional service,
-        and unforgettable experiences in each stay.
+        business trip, you'll find world-className amenities, exceptional
+        service, and unforgettable experiences in each stay.
       </p>
     </div>
   );

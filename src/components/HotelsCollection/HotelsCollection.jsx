@@ -6,13 +6,13 @@ const HotelsCollection = ({ hotelsInfo }) => {
   //   console.log(hotelsInfo);
   const hotelsData = hotelsInfo
     .sort((a, b) => b.pricePerNight - a.pricePerNight)
-    .slice(0, 6);
+    .slice(0, 8);
   return (
     <div className="py-12 ">
       <div>
         <HotelsContainer></HotelsContainer>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
         {hotelsData.map((hotelData) => (
           <HotelCardInfo
             key={hotelData._id}
