@@ -84,11 +84,11 @@ const NavBar = () => {
   return (
     <div className="fixed top-0 left-0 w-full z-50 bg-[#0682a1] shadow-md">
       <div className="max-w-screen-2xl mx-auto px-4 xl:px-8 flex items-center justify-between h-16">
-        {/* ✅ CHANGED: Wrap the logo/menu group with reversed flex on mobile */}
+        {/*  CHANGED: Wrap the logo/menu group with reversed flex on mobile */}
         <div className="flex  lg:flex-row items-center gap-4">
           {" "}
-          {/* ✅ CHANGED */}
-          {/* ✅ CHANGED: Mobile menu toggle comes first (left side on small screens) */}
+          {/*  CHANGED */}
+          {/*  CHANGED: Mobile menu toggle comes first (left side on small screens) */}
           <div className="dropdown lg:hidden">
             <div
               tabIndex={0}
@@ -117,7 +117,7 @@ const NavBar = () => {
               {links}
             </ul>
           </div>
-          {/* ✅ CHANGED: Logo and project name come after menu icon on mobile */}
+          {/*  CHANGED: Logo and project name come after menu icon on mobile */}
           <NavLink className="flex items-center gap-2" to="/">
             <img
               className="h-10 w-10 rounded-full"
