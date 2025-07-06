@@ -30,50 +30,50 @@ const NavBar = () => {
     <>
       <li>
         <NavLink
-          className={({ isActive }) =>
-            isActive ? "text-indigo-900" : "text-white"
-          }
           to="/"
+          className={({ isActive }) =>
+            isActive ? "text-indigo-900 font-semibold" : "text-white"
+          }
         >
           Home
         </NavLink>
       </li>
       <li>
         <NavLink
-          className={({ isActive }) =>
-            isActive ? "text-indigo-900" : "text-white"
-          }
           to="/roomPage"
+          className={({ isActive }) =>
+            isActive ? "text-indigo-900 font-semibold" : "text-white"
+          }
         >
           Rooms
         </NavLink>
       </li>
       <li>
         <NavLink
-          className={({ isActive }) =>
-            isActive ? "text-indigo-900" : "text-white"
-          }
           to="/allRoom"
+          className={({ isActive }) =>
+            isActive ? "text-indigo-900 font-semibold" : "text-white"
+          }
         >
           All Room
         </NavLink>
       </li>
       <li>
         <NavLink
-          className={({ isActive }) =>
-            isActive ? "text-indigo-900" : "text-white"
-          }
           to="/addHotelForm"
+          className={({ isActive }) =>
+            isActive ? "text-indigo-900 font-semibold" : "text-white"
+          }
         >
           Add Hotel
         </NavLink>
       </li>
       <li>
         <NavLink
-          className={({ isActive }) =>
-            isActive ? "text-indigo-900" : "text-white"
-          }
           to="/myBookings"
+          className={({ isActive }) =>
+            isActive ? "text-indigo-900 font-semibold" : "text-white"
+          }
         >
           MyBookings
         </NavLink>
@@ -83,17 +83,17 @@ const NavBar = () => {
 
   return (
     <div className="fixed top-0 left-0 w-full z-50 bg-[#0682a1] shadow-md">
-      {" "}
-      {/* ✅ UPDATED: fixed navbar that stays on top */}
-      {/* <div className="navbar mx-auto px-6 md:px-12 lg:px-24 xl:px-32"> */}
-      <div className="w-full max-w-screen-2xl mx-auto px-6 md:px-12 lg:px-20 xl:px-24 2xl:px-28 navbar">
-        {/* {" "} */} {/* ✅ CHANGED */}
-        <div className="navbar-start">
-          <div className="dropdown">
+      <div className="max-w-screen-2xl mx-auto px-4 xl:px-8 flex items-center justify-between h-16">
+        {/* ✅ CHANGED: Wrap the logo/menu group with reversed flex on mobile */}
+        <div className="flex  lg:flex-row items-center gap-4">
+          {" "}
+          {/* ✅ CHANGED */}
+          {/* ✅ CHANGED: Mobile menu toggle comes first (left side on small screens) */}
+          <div className="dropdown lg:hidden">
             <div
               tabIndex={0}
               role="button"
-              className="cursor-pointer mr-3 lg:hidden text-white" // ✅ CHANGED
+              className="cursor-pointer text-white"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -106,49 +106,46 @@ const NavBar = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
+                  d="M4 6h16M4 12h16M4 18h16"
                 />
               </svg>
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-[#0682a1] rounded-box mt-3 w-52 p-2 shadow text-white" // ✅ CHANGED
+              className="dropdown-content mt-3 z-[1] p-2 shadow bg-[#0682a1] rounded-box w-52 text-white space-y-1"
             >
               {links}
             </ul>
           </div>
-
-          <NavLink className="btn btn-ghost text-xl text-white items-center gap-2">
-            {" "}
-            {/* ✅ CHANGED */}
+          {/* ✅ CHANGED: Logo and project name come after menu icon on mobile */}
+          <NavLink className="flex items-center gap-2" to="/">
             <img
-              className="h-10 w-10 hidden md:block rounded-full"
+              className="h-10 w-10 rounded-full"
               src="https://i.ibb.co/fzZSrP6Q/images.jpg"
               alt="logo"
             />
-            <h1 className="fontPlusJakarta text-base md:text-xl font-extrabold">
-              <span className="text-white">PrimeLodge</span> {/* ✅ CHANGED */}
-              <span className="text-emerald-200">Bookify</span>{" "}
-              {/* ✅ CHANGED */}
+            <h1 className="text-lg sm:text-xl font-bold text-white whitespace-nowrap">
+              PrimeLodge<span className="text-emerald-200">Bookify</span>
             </h1>
           </NavLink>
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 fontMulish text-lg font-semibold space-x-3">
+
+        {/* Nav links for desktop only */}
+        <div className="hidden lg:flex">
+          <ul className="menu menu-horizontal space-x-5 font-semibold text-white">
             {links}
           </ul>
         </div>
-        <div className="navbar-end space-x-1 md:space-x-4">
-          <div>
-            <button className="flex items-center">
-              <ThemeSwitch></ThemeSwitch>
-            </button>
-          </div>
+
+        {/* Right side - theme + user or auth buttons */}
+        <div className="flex items-center gap-3">
+          <ThemeSwitch />
+
           {user ? (
             <div className="flex items-center gap-3">
               <div className="relative group">
                 <img
-                  className="w-10 h-10 rounded-full cursor-pointer hidden md:block"
+                  className="w-10 h-10 rounded-full cursor-pointer"
                   src={user.photoURL || userIcon}
                   alt="user"
                 />
@@ -157,25 +154,24 @@ const NavBar = () => {
                   <p className="text-sm text-gray-600">{user.email}</p>
                 </div>
               </div>
-
               <button
                 onClick={handleLogOut}
-                className="btn bg-emerald-600 border-none hover:bg-emerald-700 text-white px-4 fontMulish text-sm md:text-base" // ✅ CHANGED
+                className="btn bg-emerald-600 hover:bg-emerald-700 text-white text-sm px-4"
               >
                 Log Out
               </button>
             </div>
           ) : (
-            <div className="flex flex-col md:flex-row gap-2">
+            <div className="flex gap-2">
               <NavLink
                 to="/signin"
-                className="btn bg-emerald-600 hover:bg-emerald-700 text-white px-4 fontMulish text-sm md:text-base" // ✅ CHANGED
+                className="btn bg-emerald-600 hover:bg-emerald-700 text-white text-sm px-4"
               >
                 Sign In
               </NavLink>
               <NavLink
                 to="/signup"
-                className="btn bg-emerald-600 hover:bg-emerald-700 text-white px-4 fontMulish text-sm md:text-base" // ✅ CHANGED
+                className="btn bg-emerald-600 hover:bg-emerald-700 text-white text-sm px-4"
               >
                 Sign Up
               </NavLink>
