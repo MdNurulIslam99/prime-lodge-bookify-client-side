@@ -1,5 +1,5 @@
 import React, { use, useEffect, useState } from "react";
-import { NavLink, useNavigate } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../../contexts/AuthContext/AuthContext";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Swal from "sweetalert2";
@@ -195,7 +195,7 @@ const SignUp = () => {
               onClick={handleGoogleSignUp}
               aria-label="Login with Google"
               type="button"
-              className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-violet-600"
+              className="flex items-center bg-[#0682a1] border-none justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-violet-600"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -217,7 +217,7 @@ const SignUp = () => {
           </button>
 
           <p className="text-base text-center">
-            Already have an account?
+            Already have an account ?
             <NavLink to="/signin" className="focus:underline hover:underline">
               <span className="text-blue-400 text-lg font-medium">
                 {" "}
@@ -225,6 +225,13 @@ const SignUp = () => {
               </span>
             </NavLink>
           </p>
+
+          <Link
+            to="/"
+            className="btn -mt-5 w-full px-8 py-3 border-none text-lg bg-[#0682a1] font-semibold rounded-md text-gray-50"
+          >
+            Back to Home
+          </Link>
         </form>
       </div>
 

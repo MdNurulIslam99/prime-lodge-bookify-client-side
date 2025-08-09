@@ -32,7 +32,7 @@ const NavBar = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            isActive ? "text-indigo-900 font-semibold" : "text-white"
+            isActive ? "text-black text-lg font-bold" : "text-white text-lg"
           }
         >
           Home
@@ -42,7 +42,7 @@ const NavBar = () => {
         <NavLink
           to="/roomPage"
           className={({ isActive }) =>
-            isActive ? "text-indigo-900 font-semibold" : "text-white"
+            isActive ? "text-black text-lg font-bold" : "text-white text-lg"
           }
         >
           Rooms
@@ -52,32 +52,36 @@ const NavBar = () => {
         <NavLink
           to="/allRoom"
           className={({ isActive }) =>
-            isActive ? "text-indigo-900 font-semibold" : "text-white"
+            isActive ? "text-black text-lg font-bold" : "text-white text-lg"
           }
         >
           All Room
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="/addHotelForm"
-          className={({ isActive }) =>
-            isActive ? "text-indigo-900 font-semibold" : "text-white"
-          }
-        >
-          Add Hotel
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/myBookings"
-          className={({ isActive }) =>
-            isActive ? "text-indigo-900 font-semibold" : "text-white"
-          }
-        >
-          MyBookings
-        </NavLink>
-      </li>
+      {user && (
+        <>
+          <li>
+            <NavLink
+              to="/addHotelForm"
+              className={({ isActive }) =>
+                isActive ? "text-black text-lg font-bold" : "text-white text-lg"
+              }
+            >
+              Add Hotel
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/myBookings"
+              className={({ isActive }) =>
+                isActive ? "text-black text-lg font-bold" : "text-white text-lg"
+              }
+            >
+              MyBookings
+            </NavLink>
+          </li>
+        </>
+      )}
     </>
   );
 
@@ -86,8 +90,6 @@ const NavBar = () => {
       <div className="max-w-screen-2xl mx-auto px-4 xl:px-8 flex items-center justify-between h-16">
         {/*  CHANGED: Wrap the logo/menu group with reversed flex on mobile */}
         <div className="flex  lg:flex-row items-center gap-4">
-          {" "}
-          {/*  CHANGED */}
           {/*  CHANGED: Mobile menu toggle comes first (left side on small screens) */}
           <div className="dropdown lg:hidden">
             <div
@@ -120,11 +122,11 @@ const NavBar = () => {
           {/*  CHANGED: Logo and project name come after menu icon on mobile */}
           <NavLink className="flex items-center gap-2" to="/">
             <img
-              className="h-10 w-10 rounded-full"
+              className="md:h-10 h-6 md:w-10 w-6 rounded-full "
               src="https://i.ibb.co/fzZSrP6Q/images.jpg"
               alt="logo"
             />
-            <h1 className="text-lg sm:text-xl font-bold text-white whitespace-nowrap">
+            <h1 className="md:text-lg text-[12px] font-bold text-white whitespace-nowrap">
               PrimeLodge<span className="text-emerald-200">Bookify</span>
             </h1>
           </NavLink>
@@ -156,7 +158,7 @@ const NavBar = () => {
               </div>
               <button
                 onClick={handleLogOut}
-                className="btn bg-emerald-600 hover:bg-emerald-700 text-white text-sm px-4"
+                className="btn border-none bg-emerald-600 hover:bg-emerald-700 text-white text-sm md:px-4 px-3"
               >
                 Log Out
               </button>
@@ -165,13 +167,13 @@ const NavBar = () => {
             <div className="flex gap-2">
               <NavLink
                 to="/signin"
-                className="btn bg-emerald-600 hover:bg-emerald-700 text-white text-sm px-4"
+                className="btn border-none bg-emerald-600 hover:bg-emerald-700 text-white text-sm md:px-4 px-2"
               >
                 Sign In
               </NavLink>
               <NavLink
                 to="/signup"
-                className="btn bg-emerald-600 hover:bg-emerald-700 text-white text-sm px-4"
+                className="btn border-none bg-emerald-600 hover:bg-emerald-700 text-white text-sm md:px-4 px-2"
               >
                 Sign Up
               </NavLink>
