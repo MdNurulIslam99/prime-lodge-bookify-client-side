@@ -12,7 +12,7 @@ const ReviewShow = () => {
 
   useEffect(() => {
     axios
-      .get("https://primelodge-bookify.vercel.app/hotels")
+      .get("http://localhost:3000/hotels")
       .then((response) => {
         const hotels = response.data || [];
         const reviews = hotels.flatMap((hotel) => hotel.reviews || []);
@@ -32,7 +32,7 @@ const ReviewShow = () => {
   }
 
   return (
-    <div className="max-w-7xl bg-gray-200 rounded-2xl mx-auto px-4 py-10 text-center shadow-2xla">
+    <div className="max-w-7xl bg-gray-200 rounded-2xl mx-auto px-4 py-10 text-center shadow-2xl">
       <h2 className="text-3xl font-bold mb-6 text-blue-600">
         What Our Guests Say
       </h2>

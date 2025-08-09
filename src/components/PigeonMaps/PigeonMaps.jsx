@@ -11,7 +11,7 @@ const PigeonMaps = () => {
   };
 
   return (
-    <div className="w-full rounded-2xl h-[400px]">
+    <div className="w-full rounded-2xl shadow-2xl h-[400px]">
       <Map
         height={400}
         defaultCenter={[23.685, 90.3563]}

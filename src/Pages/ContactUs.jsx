@@ -10,9 +10,9 @@ import { Link } from "react-router";
 const ContactUs = () => {
   return (
     <div>
-      <Helmet>
+      {/* <Helmet>
         <title>ContactUs</title>
-      </Helmet>
+      </Helmet> */}
       <div className="bg-gray-50 text-gray-800">
         <header className="bg-indigo-300 text-white p-4">
           <div className="max-w-7xl mx-auto flex justify-between items-center">

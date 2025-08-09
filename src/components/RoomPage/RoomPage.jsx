@@ -26,7 +26,7 @@ const RoomPage = () => {
     }
 
     axios
-      .get("https://primelodge-bookify.vercel.app/hotels", { params })
+      .get("http://localhost:3000/hotels", { params })
       .then((response) => {
         setAllHotelsData(response.data);
         setFilteredHotels(response.data); //  SET initial sorted list
