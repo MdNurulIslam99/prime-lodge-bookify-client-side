@@ -1,15 +1,24 @@
-import React, { use, useState } from "react";
+import React, { useState, useEffect } from "react";
 import MyBookingsRow from "../MyBookingsRow/MyBookingsRow";
 import { Helmet } from "react-helmet";
 
 const MyBookingDetails = ({ initialData }) => {
-  // const initialData = use(myBookingPromise); // initial data from suspense
-  const [myBookings, setMyBookings] = useState(initialData); //  NEW state
+  // Initialize with empty array or initialData
+  const [myBookings, setMyBookings] = useState(initialData || []);
+
+  // Update state when initialData changes
+  useEffect(() => {
+    setMyBookings(initialData || []);
+  }, [initialData]);
+
+  // Debug logs (optional)
+  // console.log("initialData in MyBookingDetails:", initialData);
+  // console.log("myBookings state:", myBookings);
 
   const handleCancelSuccess = (deletedId) => {
     setMyBookings((prev) =>
       prev.filter((booking) => booking._id !== deletedId)
-    ); //  Remove from list
+    );
   };
 
   return (
@@ -32,14 +41,25 @@ const MyBookingDetails = ({ initialData }) => {
             </tr>
           </thead>
           <tbody>
-            {initialData.map((myBooking, index) => (
-              <MyBookingsRow
-                index={index}
-                key={myBooking._id}
-                myBooking={myBooking}
-                onCancelSuccess={handleCancelSuccess} //  Pass down cancel handler
-              />
-            ))}
+            {myBookings.length === 0 ? (
+              <tr>
+                <td
+                  colSpan="8"
+                  className="text-center text-lg font-semibold p-5"
+                >
+                  No bookings found.
+                </td>
+              </tr>
+            ) : (
+              myBookings.map((myBooking, index) => (
+                <MyBookingsRow
+                  index={index}
+                  key={myBooking._id}
+                  myBooking={myBooking}
+                  onCancelSuccess={handleCancelSuccess}
+                />
+              ))
+            )}
           </tbody>
         </table>
       </div>

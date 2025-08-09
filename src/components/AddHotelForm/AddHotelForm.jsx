@@ -1,5 +1,3 @@
-// Updated Full AddHotelForm.jsx
-
 import React, { useRef, use } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";

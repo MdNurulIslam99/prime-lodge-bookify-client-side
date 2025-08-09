@@ -4,7 +4,7 @@ import { AuthContext } from "../../contexts/AuthContext/AuthContext";
 // import { myBookingPromise } from "../../Api/myBookingApi";
 import { Helmet } from "react-helmet";
 import MyBookingPageTitle from "../MyBookingPageTitle/MyBookingPageTitle";
-import useBookingApi from "../../Api/useBookingApi";
+// import useBookingApi from "../../Api/useBookingApi";
 import useAxios from "../../Hooks/useAxios";
 
 const MyBookings = () => {

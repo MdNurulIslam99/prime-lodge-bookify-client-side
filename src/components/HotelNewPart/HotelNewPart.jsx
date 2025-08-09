@@ -54,7 +54,7 @@ const HotelNewPart = () => {
           <div className="mt-12">
             <Link
               to="/roomPage"
-              className="inline-block bg-green-400 text-white px-8 py-3 text-lg font-semibold rounded-full hover:bg-indigo-700 transition"
+              className="inline-block bg-emerald-600 text-white px-8 py-3 text-lg font-semibold rounded-full hover:bg-indigo-700 transition"
             >
               Start Booking
             </Link>

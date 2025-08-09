@@ -1,6 +1,6 @@
 import React, { use, useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
-import { NavLink, useLoaderData, useNavigate } from "react-router";
+import { Link, NavLink, useLoaderData, useNavigate } from "react-router";
 import RoomPageDetailsTitle from "../RoomPageDetailsTitle/RoomPageDetailsTitle";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -167,7 +167,7 @@ const RoomDetailsPage = () => {
             </div>
             <div className="mt-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
-                <NavLink to={""}>
+                <NavLink to="">
                   <button
                     className="btn bg-[#0682a1] font-semibold text-lg text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition"
                     onClick={() => {
@@ -232,7 +232,8 @@ const RoomDetailsPage = () => {
                     <form method="dialog">
                       <button className="btn">Close</button>
                     </form>
-                    <button
+                    <Link
+                      to="/myBookings"
                       className="btn btn-success"
                       // Prevent double booking
                       disabled={
@@ -241,7 +242,7 @@ const RoomDetailsPage = () => {
                       onClick={handleConfirmBooking}
                     >
                       Confirm Booking
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </dialog>
