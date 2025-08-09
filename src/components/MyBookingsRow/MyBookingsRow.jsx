@@ -48,13 +48,16 @@ const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:3000/hotelsBooking/${id}`)
+          .delete(`https://primelodge-bookify.vercel.app/hotelsBooking/${id}`)
           .then((res) => {
             if (res.data.deletedCount > 0) {
               axios
-                .patch(`http://localhost:3000/hotels/${roomId}`, {
-                  roomStatus: "available",
-                })
+                .patch(
+                  `https://primelodge-bookify.vercel.app/hotels/${roomId}`,
+                  {
+                    roomStatus: "available",
+                  }
+                )
                 .then((patchRes) => {
                   if (patchRes.data.modifiedCount > 0) {
                     Swal.fire(
@@ -106,7 +109,7 @@ const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
 
     if (newDate) {
       axios
-        .patch(`http://localhost:3000/hotelsBooking/${_id}`, {
+        .patch(`https://primelodge-bookify.vercel.app/hotelsBooking/${_id}`, {
           date: newDate,
         })
         .then((res) => {
@@ -133,13 +136,15 @@ const MyBookingsRow = ({ myBooking, index, onCancelSuccess }) => {
       comment: reviewData.comment,
     };
 
-    axios.post(`http://localhost:3000/hotels/${roomId}`, review).then((res) => {
-      if (res.data.modifiedCount > 0) {
-        Swal.fire("Thank you!", "Your review has been submitted.", "success");
-      } else {
-        Swal.fire("Oops!", "Failed to submit review.", "error");
-      }
-    });
+    axios
+      .post(`https://primelodge-bookify.vercel.app/hotels/${roomId}`, review)
+      .then((res) => {
+        if (res.data.modifiedCount > 0) {
+          Swal.fire("Thank you!", "Your review has been submitted.", "success");
+        } else {
+          Swal.fire("Oops!", "Failed to submit review.", "error");
+        }
+      });
 
     setReviewData({ rating: "", comment: "" });
     document.getElementById(`review_modal_${_id}`).close();

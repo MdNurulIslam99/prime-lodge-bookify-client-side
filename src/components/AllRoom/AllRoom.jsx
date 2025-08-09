@@ -10,7 +10,7 @@ const AllRoom = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/hotels")
+      .get("https://primelodge-bookify.vercel.app/hotels")
       .then((response) => {
         setHotels(response.data);
         setLoading(false);

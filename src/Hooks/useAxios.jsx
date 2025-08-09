@@ -4,7 +4,7 @@ import { AuthContext } from "../contexts/AuthContext/AuthContext";
 import Swal from "sweetalert2";
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "https://primelodge-bookify.vercel.app",
 });
 
 const useAxios = () => {
