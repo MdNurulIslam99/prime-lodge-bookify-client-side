@@ -3,7 +3,7 @@ import React from "react";
 const HotelsContainer = () => {
   return (
     <div className="mb-10 bg-base-300 shadow-2xl rounded-2xl p-6 space-y-3">
-      <h1 className="text-4xl font-extrabold text-center">
+      <h1 className="text-4xl font-bold text-center">
         Discover Your Next Destination
       </h1>
       <p className="font-semibold text-base text-center opacity-70 ">

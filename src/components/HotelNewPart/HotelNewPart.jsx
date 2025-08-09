@@ -6,10 +6,10 @@ const HotelNewPart = () => {
     <div>
       <div className="bg-gray-200 rounded-2xl shadow-2xl py-16 px-4 md:px-20">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-3">
             Discover Your Perfect Stay
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-4xl mx-auto">
             Book luxurious and budget-friendly hotels effortlessly with our
             modern platform. Real-time availability, instant booking, secure
             payments, and verified guest reviews.
