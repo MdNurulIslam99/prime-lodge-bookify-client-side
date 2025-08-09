@@ -6,14 +6,11 @@ const HotelsContainer = () => {
       <h1 className="text-4xl font-bold text-center">
         Discover Your Next Destination
       </h1>
-      <p className="font-semibold text-base text-center opacity-70 ">
-        Discover Bangladesh's finest hotels handpicked for your comfort, luxury,
-        and convenience. From stunning beachfront resorts in Cox's Bazar to
-        elegant urban escapes in Dhaka and tranquil retreats in Sylhet, our
-        curated list of top-rated hotels offers something for every traveler.
-        Whether you're planning a family vacation, a romantic getaway, or a
-        business trip, you'll find world-className amenities, exceptional
-        service, and unforgettable experiences in each stay.
+      <p className="max-w-6xl mx-auto font-semibold text-base text-center opacity-70 ">
+        Discover Bangladesh’s top hotels offering luxury, comfort, and
+        convenience—from beachfront resorts to city escapes and peaceful
+        retreats. Perfect for any traveler seeking world-class amenities and
+        unforgettable experiences.
       </p>
     </div>
   );

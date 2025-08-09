@@ -76,76 +76,78 @@ const RoomPage = () => {
         <title>RoomPage</title>
       </Helmet>
 
-      {/*  Filter Section */}
-      <form
-        onSubmit={handleFilterSubmit}
-        className="mb-6 flex flex-wrap gap-4 justify-center items-center"
-      >
-        <input
-          type="number"
-          placeholder="Min Price"
-          value={minPrice}
-          onChange={(e) => setMinPrice(e.target.value)}
-          className="input text-lg font-semibold input-bordered"
-          min="0"
-        />
-        <input
-          type="number"
-          placeholder="Max Price"
-          value={maxPrice}
-          onChange={(e) => setMaxPrice(e.target.value)}
-          className="input text-lg font-semibold input-bordered"
-          min="0"
-        />
-        <button type="submit" className="btn btn-primary">
-          Filter
-        </button>
-      </form>
+      <div>
+        <RoomPageTitle />
+      </div>
 
-      {/*  Sorting UI */}
-      <div className="mb-10 text-center space-y-4">
-        <h2 className="text-xl md:text-2xl font-bold text-blue-600">
-          Sort Hotels
-        </h2>
-        <div className="flex flex-wrap justify-center gap-6">
-          {/* Price Sort Dropdown */}
-          <div>
-            <label className="block text-sm font-semibold mb-1 text-gray-700">
-              Sort by Price
-            </label>
-            <select
-              value={priceSortOrder}
-              onChange={(e) => setPriceSortOrder(e.target.value)}
-              className="select select-bordered w-52"
-            >
-              <option value="">Default</option>
-              <option value="asc">Low to High</option>
-              <option value="desc">High to Low</option>
-            </select>
-          </div>
+      <div className="bg-gray-200 shadow-2xl rounded-2xl p-3">
+        {/*  Filter Section */}
+        <form
+          onSubmit={handleFilterSubmit}
+          className="mb-6 mt-5 flex flex-wrap gap-4 justify-center items-center"
+        >
+          <input
+            type="number"
+            placeholder="Min Price"
+            value={minPrice}
+            onChange={(e) => setMinPrice(e.target.value)}
+            className="input text-lg font-semibold input-bordered"
+            min="0"
+          />
+          <input
+            type="number"
+            placeholder="Max Price"
+            value={maxPrice}
+            onChange={(e) => setMaxPrice(e.target.value)}
+            className="input text-lg font-semibold input-bordered"
+            min="0"
+          />
+          <button type="submit" className="btn btn-primary">
+            Filter
+          </button>
+        </form>
+        {/*  Sorting UI */}
+        <div className="mb-5 text-center space-y-4">
+          <h2 className="text-xl md:text-3xl font-bold text-black">
+            Sort Hotels
+          </h2>
+          <div className="flex flex-wrap justify-center gap-6">
+            {/* Price Sort Dropdown */}
+            <div>
+              <label className="block font-semibold mb-1 text-gray-700">
+                Sort by Price
+              </label>
+              <select
+                value={priceSortOrder}
+                onChange={(e) => setPriceSortOrder(e.target.value)}
+                className="select select-bordered w-52"
+              >
+                <option value="">Default</option>
+                <option value="asc">Low to High</option>
+                <option value="desc">High to Low</option>
+              </select>
+            </div>
 
-          {/* Room Type Filter Dropdown */}
-          <div>
-            <label className="block text-sm font-semibold mb-1 text-gray-700">
-              Filter by Room Type
-            </label>
-            <select
-              value={roomTypeSort}
-              onChange={(e) => setRoomTypeSort(e.target.value)}
-              className="select select-bordered w-52"
-            >
-              <option value="">All Types</option>
-              <option value="Single">Single</option>
-              <option value="Double">Double</option>
-              <option value="Deluxe">Deluxe</option>
-              <option value="Suite">Suite</option>
-            </select>
+            {/* Room Type Filter Dropdown */}
+            <div>
+              <label className="block  font-semibold mb-1 text-gray-700">
+                Filter by Room Type
+              </label>
+              <select
+                value={roomTypeSort}
+                onChange={(e) => setRoomTypeSort(e.target.value)}
+                className="select select-bordered w-52"
+              >
+                <option value="">All Types</option>
+                <option value="Single">Single</option>
+                <option value="Double">Double</option>
+                <option value="Deluxe">Deluxe</option>
+                <option value="Suite">Suite</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
-
-      <RoomPageTitle />
-
       {loading && (
         <p className="text-center">
           <span className="loading loading-bars loading-md"></span>
@@ -165,7 +167,7 @@ const RoomPage = () => {
       )}
 
       {/*  Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
         {filteredHotels.map((hotel) => (
           <RoomPageCard key={hotel._id} allHotelData={hotel} />
         ))}

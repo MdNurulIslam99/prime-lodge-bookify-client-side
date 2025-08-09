@@ -35,7 +35,7 @@ const ReviewShow = () => {
     // CHANGED: fixed shadow-2xl typo
     // CHANGED: added pb-16 to prevent pagination overlap
     <div className="max-w-7xl bg-gray-200 rounded-2xl mx-auto px-4 py-10 text-center shadow-2xl relative">
-      <h2 className="text-3xl font-bold mb-6 text-blue-600">
+      <h2 className="text-3xl font-bold mb-6 text-black">
         What Our Guests Say
       </h2>
       <Swiper
