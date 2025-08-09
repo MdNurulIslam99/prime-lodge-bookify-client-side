@@ -1,5 +1,4 @@
 import React from "react";
-
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Link, NavLink } from "react-router";
@@ -9,34 +8,35 @@ const Footer = () => {
     <div>
       <footer className="bg-gray-900 text-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Logo & About  */}
-            <div>
-              <div className="flex justify-center items-center gap-3">
+          {/* CHANGED: Force equal column widths and spacing */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+            {/* Logo & About */}
+            <div className="flex flex-col items-center md:items-start space-y-3">
+              <div className="flex flex-col md:flex-row md:justify-start justify-center items-center gap-3">
                 <img
-                  className="h-10 w-10 md:block hidden rounded-full relative right-8 -top-3"
+                  className="h-10 w-10 rounded-full"
                   src="https://i.ibb.co/fzZSrP6Q/images.jpg"
-                  alt=""
+                  alt="logo"
                 />
-                <h2 className="text-2xl relative right-8 font-bold mb-4">
+                <h2 className="text-2xl font-bold">
                   <span className="text-blue-300">PrimeLodge</span>
                   <span className="text-emerald-300">Bookify</span>
                 </h2>
               </div>
-              <p className="text-gray-400">
-                " Experience smarter, more seamless hotel booking with our
-                modern platform—designed for today’s travelers to easily reserve
+              <p className="text-gray-400 text-sm md:text-base">
+                "Experience smarter, more seamless hotel booking with our modern
+                platform—designed for today’s travelers to easily reserve
                 hotels, resorts, and boutique stays worldwide."
               </p>
             </div>
 
-            {/* Navigation Links */}
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Services</h3>
+            {/* Services */}
+            <div className="space-y-3">
+              <h3 className="text-2xl font-bold">Our Services</h3>
               <ul className="space-y-2">
                 <li>
                   <Link
-                    to="/termsCondition"
+                    to="/branding"
                     className="hover:text-indigo-400 transition"
                   >
                     Branding
@@ -44,7 +44,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    to="/privacyPolicy"
+                    to="/design"
                     className="hover:text-indigo-400 transition"
                   >
                     Design
@@ -52,22 +52,23 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    to="/contact"
+                    to="/marketing"
                     className="hover:text-indigo-400 transition"
                   >
                     Marketing
                   </Link>
                 </li>
                 <li>
-                  <a href="/faq" className="hover:text-indigo-400 transition">
-                    Advertisement
+                  <a href="/event" className="hover:text-indigo-400 transition">
+                    Event Management
                   </a>
                 </li>
               </ul>
             </div>
 
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
+            {/* Quick Links */}
+            <div className="space-y-3">
+              <h3 className="text-2xl font-bold">Quick Links</h3>
               <ul className="space-y-2">
                 <li>
                   <Link
@@ -105,56 +106,50 @@ const Footer = () => {
             </div>
 
             {/* Social Media */}
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
-              <div className="flex space-x-4">
-                <ul className=" px-1 fontMulish text-xl font-bold flex justify-center items-center gap-8 py-3">
-                  <li>
-                    <NavLink
-                      className="text-gray-200"
-                      to="https://www.facebook.com/"
-                      target="_blank"
-                    >
-                      <FaFacebook size={35} />
-                    </NavLink>
-                  </li>
-
-                  <li>
-                    <NavLink
-                      className="text-gray-200"
-                      to="https://github.com/MdNurulIslam99"
-                      target="_blank"
-                    >
-                      <FaGithub size={35} />
-                    </NavLink>
-                  </li>
-
-                  <li>
-                    <NavLink
-                      className="text-gray-200"
-                      to="https://x.com/"
-                      target="_blank"
-                    >
-                      <FaXTwitter size={35} />
-                    </NavLink>
-                  </li>
-
-                  <li>
-                    <NavLink
-                      className="text-gray-200"
-                      to="https://www.linkedin.com/"
-                      target="_blank"
-                    >
-                      <FaLinkedin size={35} />
-                    </NavLink>
-                  </li>
-                </ul>
-              </div>
+            <div className="space-y-3">
+              <h3 className="text-2xl font-bold">Follow Us</h3>
+              <ul className="flex justify-center md:justify-start gap-6 py-3">
+                <li>
+                  <NavLink
+                    className="text-gray-200"
+                    to="https://www.facebook.com/"
+                    target="_blank"
+                  >
+                    <FaFacebook size={35} />
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className="text-gray-200"
+                    to="https://github.com/MdNurulIslam99"
+                    target="_blank"
+                  >
+                    <FaGithub size={35} />
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className="text-gray-200"
+                    to="https://x.com/"
+                    target="_blank"
+                  >
+                    <FaXTwitter size={35} />
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    className="text-gray-200"
+                    to="https://www.linkedin.com/"
+                    target="_blank"
+                  >
+                    <FaLinkedin size={35} />
+                  </NavLink>
+                </li>
+              </ul>
             </div>
           </div>
 
           <hr className="my-8 border-gray-700" />
-
           <p className="text-center text-gray-500 text-base">
             &copy; 2025 PrimeLodgeBookify Inc. All rights reserved.
           </p>

@@ -16,6 +16,10 @@ import PrivateRoute from "../components/routes/PrivateRoute";
 import ErrorMassage from "../components/ErrorMassage/ErrorMassage";
 import AllRoom from "../components/AllRoom/AllRoom";
 import AddHotelForm from "../components/AddHotelForm/AddHotelForm";
+import Branding from "../Pages/Branding";
+import Design from "../Pages/Design";
+import Marketing from "../Pages/Marketing";
+import Event from "../Pages/Event";
 // import HotelCardInfo from "../components/HotelCardInfo/HotelCardInfo";
 
 const router = createBrowserRouter([
@@ -110,6 +114,26 @@ const router = createBrowserRouter([
       {
         path: "/faqSection",
         element: <FaqSection></FaqSection>,
+        errorElement: <ErrorMassage></ErrorMassage>,
+      },
+      {
+        path: "/branding",
+        element: <Branding></Branding>,
+        errorElement: <ErrorMassage></ErrorMassage>,
+      },
+      {
+        path: "/design",
+        element: <Design></Design>,
+        errorElement: <ErrorMassage></ErrorMassage>,
+      },
+      {
+        path: "/marketing",
+        element: <Marketing></Marketing>,
+        errorElement: <ErrorMassage></ErrorMassage>,
+      },
+      {
+        path: "/event",
+        element: <Event></Event>,
         errorElement: <ErrorMassage></ErrorMassage>,
       },
       {

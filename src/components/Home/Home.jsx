@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SwiperSlider from "../SwiperSlider/SwiperSlider";
 import ContactPageMap from "../ContactPageMap/ContactPageMap";
 import TypewriterText from "../TypewriterText/TypewriterText";
@@ -17,6 +17,9 @@ import HotelNewPart from "../HotelNewPart/HotelNewPart";
 const Home = () => {
   const hotelsInfo = useLoaderData();
   // console.log(hotelsInfo);
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
     <ThemeProvider>
       {/* <div>

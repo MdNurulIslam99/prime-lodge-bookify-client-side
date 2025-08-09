@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { FaPhone } from "react-icons/fa";
 // import { Helmet } from "react-helmet-async";
@@ -8,13 +8,16 @@ import { MdAttachEmail } from "react-icons/md";
 
 import { Link } from "react-router";
 const ContactUs = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
-    <div>
+    <div className="mt-16 mb-10 rounded-lg">
       {/* <Helmet>
         <title>ContactUs</title>
       </Helmet> */}
       <div className="bg-gray-50 text-gray-800">
-        <header className="bg-indigo-300 text-white p-4">
+        <header className="bg-indigo-300 text-white p-4 rounded-lg">
           <div className="max-w-7xl mx-auto flex justify-between items-center">
             <h1 className="text-2xl font-bold">PrimeLodgeBookify</h1>
             <nav>

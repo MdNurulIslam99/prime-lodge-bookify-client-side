@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router";
 
 const FaqSection = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
-    <div className="bg-gray-200  rounded-2xl">
+    <div className="bg-gray-200 mt-16 mb-10  rounded-2xl">
       <Helmet>
         <title>FaqSection</title>
       </Helmet>
       <div>
-        <header className="bg-indigo-300 text-white p-4">
+        <header className="bg-indigo-300 rounded-lg text-white p-4">
           <div className="max-w-7xl mx-auto flex justify-between items-center">
             <h1 className="text-2xl font-bold">PrimeLodgeBookify</h1>
             <nav>

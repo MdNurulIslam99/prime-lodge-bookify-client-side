@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router";
 
 const TermsConditions = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
   return (
-    <div className="bg-gray-100 text-gray-800 ">
+    <div className="bg-gray-100 text-gray-800 mt-16 mb-10 p-3 rounded-lg">
       <Helmet>
         <title>TermsConditions</title>
       </Helmet>
       <div>
-        <header className="bg-indigo-300 text-white p-4">
+        <header className="bg-indigo-300 rounded-lg text-white p-4">
           <div className="max-w-7xl mx-auto flex justify-between items-center">
             <h1 className="text-2xl font-bold">PrimeLodgeBookify</h1>
             <nav>
